@@ -1,0 +1,25 @@
+{
+  "name": "el-choco/kobalt",
+  "description": "A rounded social feed theme for Flarum 2 with a top widget shelf.",
+  "type": "flarum-extension",
+  "license": "MIT",
+  "authors": [{ "name": "el-choco" }],
+  "keywords": ["flarum", "theme", "feed"],
+  "require": {
+    "php": "^8.3",
+    "flarum/core": "^2.0.2"
+  },
+  "autoload": {
+    "psr-4": { "ElChoco\\Kobalt\\": "src/" }
+  },
+  "suggest": {
+    "fof/forum-widgets-core": "Display configured widgets above the discussion feed."
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Kobalt",
+      "category": "theme",
+      "icon": { "name": "fas fa-layer-group", "backgroundColor": "#4d698e", "color": "#ffffff" }
+    }
+  }
+}

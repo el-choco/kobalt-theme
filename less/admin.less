@@ -1,0 +1,144 @@
+.KobaltStudio {
+  .KobaltStudio-intro {
+    padding: 24px 0 16px;
+
+    > span {
+      color: #4d698e;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+
+    h2 { margin: 4px 0; }
+    p { color: var(--muted-color); }
+  }
+}
+
+.KobaltStudio-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) minmax(0, 1.28fr);
+  gap: 20px;
+  align-items: start;
+
+  @media (max-width: 1090px) { grid-template-columns: minmax(0, 1fr); }
+}
+
+.KobaltStudio-editor,
+.KobaltStudio-preview {
+  min-width: 0;
+  border: 1px solid var(--control-bg);
+  border-radius: 17px;
+  background: var(--body-bg);
+}
+
+.KobaltStudio-tabs,
+.KobaltStudio-save {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 12px;
+}
+
+.KobaltStudio-tabs {
+  border-bottom: 1px solid var(--control-bg);
+
+  .Button[aria-pressed='true'] {
+    background: #4d698e;
+    color: #fff;
+  }
+}
+
+.KobaltStudio-fields {
+  padding: 5px 16px 0;
+
+  h3 { margin-bottom: 4px; }
+  > .helpText { margin: 0 0 18px; }
+}
+
+.KobaltStudio-save { border-top: 1px solid var(--control-bg); }
+
+.KobaltStudio-preview {
+  --kobalt-accent: var(--kobalt-accent-light);
+  position: sticky;
+  top: 75px;
+  overflow: hidden;
+
+  @media (max-width: 1090px) { position: static; }
+}
+
+.KobaltStudio-previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 13px;
+}
+
+.KobaltStudio-stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 0 10px 10px;
+  padding: 16px;
+  border-radius: var(--kobalt-radius);
+
+  > * { flex: 1 1 150px; }
+
+  h3 {
+    margin: 4px 0;
+    color: inherit;
+    overflow-wrap: anywhere;
+  }
+
+  p { margin: 4px 0 0; overflow-wrap: anywhere; }
+}
+
+.KobaltStudio-previewFeed {
+  display: grid;
+  gap: var(--kobalt-card-gap);
+  margin: 0 auto;
+  padding: 10px;
+  background: var(--control-bg);
+}
+
+.KobaltStudio-preview[data-width='narrow'] .KobaltStudio-previewFeed { width: 84%; }
+.KobaltStudio-preview[data-width='balanced'] .KobaltStudio-previewFeed { width: 94%; }
+
+.KobaltStudio-previewWidgets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+
+  > span {
+    padding: 7px;
+    border-radius: 10px;
+    background: var(--body-bg);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+}
+
+.KobaltStudio-previewComposer,
+.KobaltStudio-previewCard {
+  padding: var(--kobalt-card-pad);
+  border-radius: var(--kobalt-radius);
+  background: var(--body-bg);
+}
+
+.KobaltStudio-previewCard p { margin: 4px 0 0; }
+.KobaltStudio-previewCard small { display: block; color: var(--muted-color); }
+.KobaltStudio-previewFeed > .KobaltFeatured { margin: 0; }
+.KobaltStudio-previewFeed > .KobaltHome { margin: 0; }
+.KobaltStudio-projectPicker { margin-block: 0 12px; }
+
+.KobaltStudio-previewShoutbox {
+  min-height: var(--kobalt-shoutbox-height);
+  display: grid;
+  align-content: start;
+  padding: 10px;
+  border-radius: var(--kobalt-radius);
+  background: var(--body-bg);
+  color: var(--muted-color);
+}
