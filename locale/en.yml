@@ -1,0 +1,218 @@
+el-choco-kobalt:
+  forum:
+    dock: Kobalt Orbit quick links
+    link1: Forum
+    link2: Downloads
+    link3: Tags
+    focus_label: In focus
+    focus_title: Software from the community
+    focus_action: Explore downloads
+    featured: Featured
+    featured_open: Open
+    feed_actions: Discussion actions
+    reply: Reply
+    react: React
+    reaction_total: "{count, plural, one {# reaction} other {# reactions}}"
+    share: Share
+    share_copied: Link copied.
+    share_prompt: Copy discussion link
+    projects: Projects
+    project_download: Download
+    project_docs: Documentation
+    project_support: Support
+    visit_title: Since your last visit
+    visit_since: "Changes since your visit {time}"
+    visit_first: "A selection of recent activity will appear here on your next visit."
+    visit_storage: "This browser cannot save your last visit here."
+    visit_discussions: New discussions
+    visit_replies: New replies
+    visit_downloads: Updated downloads
+    visit_loading: Loading …
+    visit_error: Currently unavailable.
+    visit_empty: No new items in the current selection.
+    following: My topics
+    support_status: Support status
+    support_all: All
+    support_open: Open
+    support_solved: Solved
+    best_answer: Go to the best answer
+    "workspace": "My workspace"
+    "workspace_help": "Your shortcuts and completed steps are saved per account in this browser."
+    "workspace_empty": "Save your important topics, categories and guides here."
+    "workspace_name": "Label"
+    "workspace_url": "Address"
+    "workspace_add": "Add"
+    "workspace_pin": "Pin to workspace"
+    "workspace_remove": "Remove {title}"
+    "workspace_full": "Your workspace already contains eight links."
+    "workspace_invalid": "Enter a name and a valid address. You can save up to eight links."
+    "personal_storage": "Your browser could not save this preference."
+    "journey": "Getting started"
+    "journey_done": "Mark {title} as completed"
+    "toolbox": "Toolbox"
+    "project_repo": "Source code"
+    "notice_open": "Learn more"
+    "reading": "Reading mode"
+    "reading_exit": "Exit reading mode"
+    "reading_size": "Font size"
+    "reading_spacing": "Line spacing"
+    "outline": "Contents"
+    "outline_first": "Open the first post and its headings"
+    "footer": "Footer"
+    "footer_social": "Social links"
+    "footer_links": "More links"
+    "footer_top": "Back to top"
+  admin:
+    title: Kobalt Studio
+    subtitle: Shape the header, stage and feed. The preview responds to your edits.
+    preview: Live preview
+    defaults: Apply defaults
+    orbit: Orbit
+    stage: Stage
+    featured: Featured
+    projects: Projects
+    community: Community
+    layout: Layout
+    orbit_help: "Up to three destinations. Examples include @index, @depot.index, @tags, downloads or an HTTPS address. Clearing an address hides that link."
+    stage_help: "Empty headings use the forum's existing text. The focus card can link to a discussion, page or external address."
+    featured_help: "The card appears on the home page above the feed. Enter a discussion ID, slug, or link from this forum. Leave the title empty to use the discussion title."
+    projects_help: "Up to three cards. An empty name hides the card. Use the Depot slug from the download URL to load the published version automatically. Without a slug, the entered version is shown."
+    community_help: "Visit updates are shown to signed-in members. Support filters require FoF Best Answer and a Q&A category. My topics requires FoF Follow Tags."
+    project_slot: "Project {slot}"
+    invalid_discussion: "Enter a discussion ID or a valid link, for example 28 or 28-home-server."
+    featured_example: Title of the selected discussion
+    example_label: Example discussion
+    layout_help: "Use FoF Widgets Core to assign widget positions. These settings change how the theme presents them."
+    forum_widget: Forum statistics
+    members_widget: Active members
+    online_widget: Online now
+    composer_example: Start a discussion
+    shoutbox_example: Shoutbox message area · Example
+    discussion_example: A new idea for the home server
+    discussion_text: See how the spacing, rounded corners and colors look in the feed.
+    "experience": "Comfort"
+    "journey": "Getting started"
+    "categories": "Categories"
+    "experience_help": "Enable each feature individually. Workspace and completed steps are stored per account in this browser. Configure the toolbox through Projects, and notices and content modes through Categories."
+    "experience_preview": "Reading mode and the toolbox appear inside an open discussion."
+    "journey_help": "Configure up to five steps with a title and destination. Empty entries are hidden. Members can mark steps as completed."
+    "categories_help": "Up to three rules. Enter the category slug from /t/slug. The first matching rule applies. Support uses FoF Best Answer, guides show an outline of h2/h3 headings in the loaded first post, and software uses the assigned project. Notices appear in the category and discussion. All configured text is public."
+    "step_slot": "Step {slot}"
+    "category_slot": "Rule {slot}"
+    "footer": "Footer"
+    "footer_help": "An information block, four link columns and four social links. Empty or invalid links are hidden. Icon examples: fas fa-book or fab fa-github. Copyright supports '{year}' and '{forum}'. When enabling this footer, disable another footer such as Modern Footer separately. Adjust the mobile bottom spacing manually for a fixed bottom navigation."
+    "footer_general": "General"
+    "footer_blocks": "Link columns"
+    "footer_social": "Social links"
+    "block_slot": "Column {slot}"
+    "social_slot": "Social link {slot}"
+    fields:
+      dock: Show Orbit quick links
+      link1_label: Link 1 label
+      link1_url: Link 1 destination
+      link2_label: Link 2 label
+      link2_url: Link 2 destination
+      link3_label: Link 3 label
+      link3_url: Link 3 destination
+      hero: Show the banner on the home page
+      hero_title: Banner title
+      hero_subtitle: Banner description
+      pattern: Banner background
+      focus: Show the focus card
+      focus_label: Focus label
+      focus_title: Focus title
+      focus_text: Focus description
+      focus_action: Focus link label
+      focus_url: Focus link destination
+      featured: Show featured card on the home page
+      featured_source: Featured content source
+      featured_discussion: Discussion ID or link
+      featured_title: Featured title
+      featured_text: Featured description
+      featured_image: Featured image URL
+      featured_url: Featured link destination
+      projects: Show project cards on the home page
+      project_title: Project name
+      project_version: Version to show manually
+      project_depot: Depot slug for automatic version display
+      project_download: Download link
+      project_docs: Documentation link
+      project_support: Support discussion link
+      visit_updates: Show visit updates
+      support_filters: Show support filters and best answer links
+      following_feed: Show My topics in the forum menu
+      glass: Glass style for banner and widgets
+      feed_actions: Show actions on feed cards
+      tag_accents: Use category colors on card edges
+      accent: Accent color
+      width: Maximum feed width
+      radius: Card corners
+      density: Card spacing
+      composer: Show the discussion prompt in the feed
+      widgets: Move right-side widgets above the feed
+      shoutbox: Shoutbox message area height
+      "workspace": "Show personal workspace"
+      "onboarding": "Show getting started steps"
+      "reader": "Offer reading mode in discussions"
+      "toolbox": "Show the discussion toolbox"
+      "category_notices": "Show category notices"
+      "content_modes": "Enable category content modes"
+      "project_repo": "Project source URL"
+      "step_title": "Step title"
+      "step_url": "Step destination"
+      "category_tag": "Category slug"
+      "category_mode": "Discussion presentation"
+      "category_project": "Assigned project"
+      "category_notice": "Notice text"
+      "category_label": "Notice link label"
+      "category_url": "Notice destination"
+      "footer": "Show Kobalt footer"
+      "footer_mode": "Display on these pages"
+      "footer_style": "Appearance"
+      "footer_mobile": "Show on mobile"
+      "footer_gap": "Additional bottom spacing on mobile"
+      "footer_info": "Show information block and social links"
+      "footer_logo": "Show existing forum logo"
+      "footer_title": "Title – leave empty for forum name"
+      "footer_text": "Description"
+      "footer_copyright": "Copyright – placeholders: '{year}' and '{forum}'"
+      "footer_top": "Show back-to-top button"
+      "footer_block_enabled": "Show this link column"
+      "footer_block_title": "Column title"
+      "footer_block_icon": "Column icon – Font Awesome"
+      "footer_link_label": "Link label"
+      "footer_link_url": "Link destination"
+      "footer_social_label": "Label"
+      "footer_social_icon": "Icon – Font Awesome"
+      "footer_social_url": "Link destination"
+    choices:
+      orbit: Orbital lines
+      manual: Custom content
+      discussion: Existing discussion
+      grid: Grid
+      plain: Gradient
+      balanced: Standard
+      wide: Wide
+      narrow: Narrow
+      soft: Soft
+      round: Round
+      sharp: Subtle
+      comfortable: Airy
+      compact: Compact
+      short: Short
+      tall: Tall
+      "standard": "Standard"
+      "support": "Support"
+      "guide": "Guide"
+      "software": "Software"
+      "1": "Project 1"
+      "2": "Project 2"
+      "3": "Project 3"
+      "all": "All pages"
+      "index": "Homepage only"
+      "except_discussion": "Except discussion pages"
+      "brand": "Kobalt blue"
+      "0": "No extra spacing"
+      "56": "56 pixels"
+      "72": "72 pixels"
+      "96": "96 pixels"

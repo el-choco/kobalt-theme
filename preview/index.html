@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="de" data-theme="light" data-kobalt-glass="on">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kobalt · Flarum-Theme</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <header class="DemoHeader App-header">
+    <div class="DemoFrame DemoHeader-inner">
+      <div class="DemoBrand"><span class="DemoBrand-mark" aria-hidden="true">K</span><strong>el-choco<span>’s Ecke</span></strong></div>
+      <nav class="KobaltDock" aria-label="Kobalt Orbit">
+        <span class="KobaltDock-orbit" aria-hidden="true">✦</span>
+        <a class="KobaltDock-link" href="#feed" data-view="feed" aria-current="page"><i aria-hidden="true">▤</i><span>Forum</span></a>
+        <a class="KobaltDock-link" href="#depot" data-view="depot"><i aria-hidden="true">↓</i><span>Downloads</span></a>
+        <a class="KobaltDock-link" href="#discussion" data-view="discussion"><i aria-hidden="true">◇</i><span>Thema</span></a>
+      </nav>
+      <button class="DemoMode" type="button" aria-label="Dunkelmodus" aria-pressed="false"><span aria-hidden="true">◐</span> <span class="DemoMode-label">Dunkel</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="WelcomeHero DemoHero">
+      <div class="DemoHero-inner">
+        <div>
+          <div class="DemoHero-overline"><span></span> KOBALT · THEME-VORSCHAU</div>
+          <h1 class="Hero-title">el-choco’s Ecke</h1>
+          <p class="Hero-subtitle">Software, Selfhosting und Ideen aus der Community.</p>
+        </div>
+        <aside class="KobaltFocus">
+          <div class="KobaltFocus-orbit" aria-hidden="true">✦</div>
+          <div class="KobaltFocus-copy">
+            <div class="KobaltFocus-label">Im Fokus</div>
+            <strong class="KobaltFocus-title">Die Werkzeugkiste</strong>
+            <p class="KobaltFocus-text">Kleine Helfer für deinen nächsten Homeserver.</p>
+            <a class="KobaltFocus-action" href="#depot" data-view="depot">Downloads entdecken <span aria-hidden="true">↗</span></a>
+          </div>
+        </aside>
+      </div>
+      <div class="DemoHero-orbit" aria-hidden="true"></div>
+    </section>
+
+    <section class="DemoFrame DemoColumns">
+      <aside class="DemoNav">
+        <div class="DemoNav-label">ENTDECKEN</div>
+        <nav aria-label="Beispielnavigation">
+          <button type="button" data-view="feed" class="DemoNav-current"><span aria-hidden="true">▤</span> Alle Diskussionen</button>
+          <button type="button" data-view="depot"><span aria-hidden="true">↓</span> Downloads</button>
+          <span><span aria-hidden="true">▦</span> Tags</span>
+          <span><span aria-hidden="true">☆</span> Du folgst</span>
+          <span><span aria-hidden="true">◇</span> Lesezeichen</span>
+        </nav>
+        <div class="DemoNav-label DemoNav-categories">KATEGORIEN</div>
+        <span class="DemoNav-tag"><i></i> Ankündigungen</span>
+        <span class="DemoNav-tag"><i></i> Selfhosting</span>
+        <span class="DemoNav-tag"><i></i> Meine Software</span>
+      </aside>
+
+      <section class="IndexPage DemoPane" id="feed" aria-label="Themenliste">
+        <div class="KobaltWidgets">
+          <div class="FofWidgets-sideNavAlt FofWidgets-WidgetSection">
+            <article class="FofWidgets-Widget DemoWidget">
+              <div class="FofWidgets-Widget-title"><span aria-hidden="true">▥</span> Forum-Statistiken</div>
+              <div class="DemoMetric"><b>22</b> Themen <span>·</span> <b>31</b> Beiträge</div>
+            </article>
+            <article class="FofWidgets-Widget DemoWidget">
+              <div class="FofWidgets-Widget-title"><span aria-hidden="true">♢</span> Aktive Mitglieder</div>
+              <div class="DemoWidget-user"><span class="Avatar DemoAvatar DemoAvatar-blue">EC</span><strong>el-choco</strong><span>8 Beiträge</span></div>
+            </article>
+            <article class="FofWidgets-Widget DemoWidget">
+              <div class="FofWidgets-Widget-title"><span aria-hidden="true">◎</span> Gerade online</div>
+              <div class="DemoWidget-user"><span class="DemoOnline"></span><strong>3 Mitglieder</strong></div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="KobaltFeatured">
+          <div class="KobaltFeatured-icon" aria-hidden="true">★</div>
+          <div class="KobaltFeatured-copy">
+            <div class="KobaltFeatured-label">Empfohlen</div>
+            <h2>ServerLotse</h2>
+            <p>Ein Einstieg für deinen eigenen Homeserver.</p>
+            <a class="KobaltFeatured-link" href="#discussion" data-view="discussion">Ansehen</a>
+          </div>
+        </aside>
+        <section class="KobaltHome KobaltProjects">
+          <h2>Projekte</h2>
+          <div class="KobaltHome-grid">
+            <article class="KobaltHome-card">
+              <h3>ServerLotse</h3>
+              <span class="KobaltProjects-version">Version 2.4 · Beispiel</span>
+              <div class="KobaltHome-links"><a href="#depot" data-view="depot">Download</a><a href="#discussion" data-view="discussion">Anleitung</a><a href="#discussion" data-view="discussion">Support</a></div>
+            </article>
+          </div>
+        </section>
+        <section class="KobaltHome KobaltVisit">
+          <h2>Seit deinem letzten Besuch</h2>
+          <div class="KobaltHome-grid">
+            <article class="KobaltHome-card"><h3>Neue Diskussionen</h3><p>Ein neuer Einstieg in Docker Compose</p></article>
+            <article class="KobaltHome-card"><h3>Neue Antworten</h3><p>Fragen zum Homeserver</p></article>
+            <article class="KobaltHome-card"><h3>Aktualisierte Downloads</h3><p>ServerLotse 2.4</p></article>
+          </div>
+        </section>
+        <div class="IndexPage-toolbar DemoToolbar"><strong>Aktuellste <span aria-hidden="true">⌄</span></strong><span>Diskussionen</span></div>
+        <section class="KobaltHome">
+          <h2>Mein Arbeitsplatz</h2>
+          <p class="helpText">Deine wichtigsten Ziele – pro Konto in diesem Browser gespeichert.</p>
+          <ul class="KobaltPins"><li><a href="#discussion" data-view="discussion">ServerLotse · Anleitung</a></li><li><a href="#depot" data-view="depot">Meine Downloads</a></li></ul>
+        </section>
+        <section class="KobaltHome">
+          <h2>Dein Einstieg</h2>
+          <ol class="KobaltJourney">
+            <li><label><input type="checkbox" aria-label="Forum kennenlernen erledigt"> </label><a href="#discussion" data-view="discussion">Forum kennenlernen</a></li>
+            <li><label><input type="checkbox" aria-label="Werkzeuge entdecken erledigt"> </label><a href="#depot" data-view="depot">Werkzeuge entdecken</a></li>
+            <li><label><input type="checkbox" aria-label="Erstes Projekt starten erledigt"> </label><a href="#discussion" data-view="discussion">Erstes Projekt starten</a></li>
+          </ol>
+        </section>
+        <div class="KobaltComposer">
+          <span class="Avatar DemoAvatar DemoAvatar-blue">EC</span>
+          <div class="Button KobaltComposer-button"><span class="Button-label"><span class="Button-labelText"><span class="KobaltComposer-label">Eine Diskussion beginnen</span><span class="KobaltComposer-icon" aria-hidden="true">✎</span></span></span></div>
+        </div>
+        <div class="DiscussionList">
+          <ul class="DiscussionList-discussions">
+            <li>
+              <article class="DiscussionListItem Stickiest-superSticky" style="--kobalt-tag-accent: #4d698e">
+                <div class="DiscussionListItem-content unread">
+                  <div class="DiscussionListItem-author">
+                    <div class="DiscussionListItem-author-avatar"><span class="Avatar DemoAvatar DemoAvatar-blue">EC</span></div>
+                    <div class="KobaltByline">el-choco<div class="KobaltByline-time">20. Sept. · Angeheftet</div></div>
+                  </div>
+                  <a class="DiscussionListItem-main" href="#discussion" data-view="discussion">
+                    <h2 class="DiscussionListItem-title"><span class="DemoPrefix RubricLabel">Wichtig</span> Nutzungsbedingungen &amp; Netiquette</h2>
+                    <ul class="DiscussionListItem-info">
+                      <li class="DemoTag item-tags">Ankündigungen</li>
+                      <li class="item-excerpt">Willkommen in unserer Ecke des Internets. Hier tauschen wir uns über Software und eigene Projekte aus. Damit sich alle beteiligen können, gehen wir respektvoll miteinander um und halten Diskussionen beim Thema.</li>
+                    </ul>
+                  </a>
+                  <div class="DiscussionListItem-stats"><a class="DiscussionListItem-stats-item" href="#discussion" data-view="discussion"><span aria-hidden="true">◌</span> 2 Antworten</a></div>
+                  <div class="KobaltFeed-actions"><a class="Button Button--flat" href="#discussion" data-view="discussion">Antworten</a><span class="Button Button--flat">Reagieren</span><span class="Button Button--flat">Teilen</span><span class="KobaltFeed-reactions">♥ 1 Reaktion</span></div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="DiscussionListItem" style="--kobalt-tag-accent: #428367">
+                <div class="DiscussionListItem-content">
+                  <div class="DiscussionListItem-author">
+                    <div class="DiscussionListItem-author-avatar"><span class="Avatar DemoAvatar DemoAvatar-green">SL</span></div>
+                    <div class="KobaltByline">ServerLotse<div class="KobaltByline-time">vor 2 Tagen</div></div>
+                  </div>
+                  <div class="DiscussionListItem-main">
+                    <h2 class="DiscussionListItem-title">Ein Wochenende mit meinem kleinen Homeserver</h2>
+                    <ul class="DiscussionListItem-info">
+                      <li class="DemoTag DemoTag-green item-tags">Selfhosting</li>
+                      <li class="item-excerpt">Backups, ein neues Dashboard und ein paar Dinge, die ich beim Umzug auf Docker gern vorher gewusst hätte.</li>
+                    </ul>
+                  </div>
+                  <div class="DiscussionListItem-stats"><span class="DiscussionListItem-stats-item">◌ 5 Antworten</span></div>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="DiscussionPage DemoPane" id="discussion" aria-label="Geöffnetes Thema" hidden>
+        <div class="DiscussionHero DemoSectionTitle">
+          <span class="DemoTag">Ankündigungen</span>
+          <h2 class="DiscussionHero-title"><span class="DemoPrefix RubricLabel">Wichtig</span> Nutzungsbedingungen &amp; Netiquette</h2>
+        </div>
+        <aside class="KobaltNotice"><p>Neu hier? Im Handbuch findest du die ersten Schritte und Hilfe zu unseren Werkzeugen.</p><a href="#depot" data-view="depot">Downloads ansehen</a></aside>
+        <div class="KobaltTopicTools"><div class="KobaltReading">
+          <button class="Button DemoRead" type="button" aria-pressed="false">Lesemodus</button>
+          <label>Schriftgröße <select class="FormControl DemoReadSize"><option value="15px">15px</option><option value="17px">17px</option><option value="19px">19px</option></select></label>
+          <label>Zeilenabstand <select class="FormControl DemoReadSpacing"><option>1.6</option><option>1.8</option><option>2</option></select></label>
+        </div></div>
+        <section class="KobaltHome KobaltProjects"><h2>Werkzeugkasten</h2><article><h3>ServerLotse</h3><p>Version 2.4 · Beispieldaten</p><div class="KobaltHome-links"><a href="#depot" data-view="depot">Download</a><a href="#demo-start">Anleitung</a><a href="#demo-start">Quellcode</a></div></article></section>
+        <nav class="KobaltOutline" aria-label="In diesem Beitrag"><strong>In diesem Beitrag</strong><ol><li><a href="#demo-start">Willkommen</a></li><li><a href="#demo-help">Hilfe finden</a></li></ol></nav>
+        <div class="PostStream">
+          <article class="CommentPost DemoPost">
+            <div class="DemoPost-head"><span class="Avatar DemoAvatar DemoAvatar-blue">EC</span><div class="KobaltByline">el-choco<div class="KobaltByline-time">20. Sept.</div></div></div>
+            <div class="Post-body">
+              <h2 id="demo-start">Willkommen</h2><p>Willkommen in unserer Ecke des Internets. Hier tauschen wir uns über Software und eigene Projekte aus.</p>
+              <h3 id="demo-help">Hilfe finden</h3><p>Damit sich alle beteiligen können, gehen wir respektvoll miteinander um und halten Diskussionen beim Thema. Wenn du Hilfe suchst, beschreibe kurz, was du ausprobiert hast und welche Ausgabe du siehst.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="IndexPage DepotPage DemoPane" id="depot" aria-label="Depot" hidden>
+        <div class="DepotHero DemoSectionTitle"><h2>Downloads</h2><p>Programme und Werkzeuge aus der Community</p></div>
+        <div class="DemoDepot">
+          <nav class="IndexPage-nav"><ul><li class="item-newDiscussion"><button type="button" class="Button Button--primary" disabled>↑ Datei hochladen</button></li><li>Alle Dateien</li><li>Meine Dateien</li></ul></nav>
+          <article class="DemoFile"><span class="DemoFile-icon" aria-hidden="true">▣</span><div><strong>CrystalDiskMark 9.0.2</strong><p>Benchmark für SSDs und Festplatten</p><span class="DemoTag">Tools</span></div></article>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer aria-label="Fußbereich">
+    <section class="KobaltFooter" data-style="brand" data-mobile="on" style="--kobalt-footer-gap:0px">
+      <div class="KobaltFooter-inner">
+        <div class="KobaltFooter-grid">
+          <div class="KobaltFooter-info"><h2>el-choco’s Ecke</h2><p>Ideen teilen. Projekte entwickeln. Gemeinsam weiterkommen.</p><nav class="KobaltFooter-social" aria-label="Social-Links"><a href="https://github.com/el-choco" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div>
+          <nav class="KobaltFooter-block" aria-label="Community"><h3>Community</h3><ul><li><a href="#feed" data-view="feed">Forum</a></li><li><a href="#discussion" data-view="discussion">Willkommen</a></li></ul></nav>
+          <nav class="KobaltFooter-block" aria-label="Software"><h3>Software</h3><ul><li><a href="#depot" data-view="depot">Downloads</a></li><li><a href="#discussion" data-view="discussion">Anleitungen</a></li></ul></nav>
+          <nav class="KobaltFooter-block" aria-label="Kobalt"><h3>Kobalt</h3><ul><li><a href="#discussion" data-view="discussion">Hilfe finden</a></li><li><a href="#feed" data-view="feed">Zur Community</a></li></ul></nav>
+        </div>
+        <div class="KobaltFooter-bottom"><span>© <span class="DemoYear"></span> el-choco’s Ecke</span><button type="button" class="Button Button--flat DemoTop">Nach oben ↑</button></div>
+      </div>
+    </section>
+  </footer>
+  <footer class="DemoFrame DemoFooter">Kobalt 0.1.0-alpha.14 · Statische Vorschau mit Beispieldaten</footer>
+  <script>
+    document.querySelector('.DemoYear').textContent = new Date().getFullYear();
+    document.querySelector('.DemoTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    const panes = document.querySelectorAll('.DemoPane');
+    const tabs = document.querySelectorAll('.KobaltDock [data-view]');
+    const switchView = (view) => {
+      if (![...panes].some((pane) => pane.id === view)) return;
+      panes.forEach((pane) => { pane.hidden = pane.id !== view; });
+      tabs.forEach((tab) => {
+        if (tab.dataset.view === view) tab.setAttribute('aria-current', 'page');
+        else tab.removeAttribute('aria-current');
+      });
+      document.querySelectorAll('.DemoNav button[data-view]').forEach((button) => {
+        button.classList.toggle('DemoNav-current', button.dataset.view === view);
+      });
+    };
+    document.querySelectorAll('[data-view]').forEach((element) => element.addEventListener('click', (event) => {
+      event.preventDefault();
+      switchView(element.dataset.view);
+    }));
+    document.querySelector('.DemoMode').addEventListener('click', (event) => {
+      const dark = document.documentElement.dataset.theme !== 'dark';
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      event.currentTarget.setAttribute('aria-pressed', String(dark));
+      document.querySelector('.DemoMode-label').textContent = dark ? 'Hell' : 'Dunkel';
+    });
+    const reading = document.querySelector('#discussion');
+    document.querySelector('.DemoRead').addEventListener('click', (event) => {
+      const active = reading.dataset.kobaltReading !== 'on';
+      reading.dataset.kobaltReading = active ? 'on' : 'off';
+      event.currentTarget.setAttribute('aria-pressed', String(active));
+      event.currentTarget.textContent = active ? 'Lesemodus beenden' : 'Lesemodus';
+    });
+    document.querySelector('.DemoReadSize').addEventListener('change', (event) => reading.style.setProperty('--kobalt-reading-size', event.target.value));
+    document.querySelector('.DemoReadSpacing').addEventListener('change', (event) => reading.style.setProperty('--kobalt-reading-spacing', event.target.value));
+    const initial = new URLSearchParams(location.search);
+    if (initial.has('view')) switchView(initial.get('view'));
+    if (initial.get('mode') === 'dark') document.querySelector('.DemoMode').click();
+  </script>
+</body>
+</html>

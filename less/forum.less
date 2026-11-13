@@ -1,0 +1,648 @@
+:root {
+  --kobalt-brand: #4d698e;
+  --kobalt-accent: var(--kobalt-accent-light, #4d698e);
+  --kobalt-canvas: #f1f5fa;
+  --kobalt-card: #fff;
+  --kobalt-tint: #ecf2fa;
+  --kobalt-line: #dbe4ef;
+  --kobalt-ink: #1d3048;
+  --kobalt-muted: #52647c;
+  --kobalt-shadow: 0 2px 3px rgba(33, 56, 85, .035), 0 10px 26px rgba(33, 56, 85, .055);
+  --kobalt-radius: 19px;
+  --kobalt-frame: 1210px;
+  --kobalt-gutter: 15px;
+}
+
+[data-theme^='dark'] {
+  --kobalt-accent: color-mix(in srgb, var(--kobalt-brand) 48%, #e5efff);
+  --kobalt-canvas: #111a28;
+  --kobalt-card: #1a273a;
+  --kobalt-tint: #22324a;
+  --kobalt-line: #34455e;
+  --kobalt-ink: #edf3ff;
+  --kobalt-muted: #b6c6dd;
+  --kobalt-shadow: 0 6px 22px rgba(0, 0, 0, .17);
+}
+
+[data-theme='light-hc'],
+[data-theme='dark-hc'] {
+  --kobalt-line: var(--muted-color);
+  --kobalt-ink: var(--text-color);
+  --kobalt-muted: var(--text-color);
+  --kobalt-accent: var(--link-color);
+}
+
+body {
+  background: var(--kobalt-canvas);
+}
+
+.App-content {
+  border-top-color: var(--kobalt-line);
+  background: var(--kobalt-canvas);
+}
+
+.App-header {
+  box-shadow: 0 2px 12px rgba(31, 53, 80, .08);
+}
+
+.KobaltDock-mobile { display: none; }
+
+@media @phone {
+  .KobaltDock-mobile {
+    display: block;
+    margin-bottom: 11px;
+  }
+}
+
+@media @tablet-up {
+  .Header-primary:has(.KobaltDock) > .Header-controls {
+    justify-content: center;
+  }
+}
+
+.App-header .Button,
+.IndexPage .Button,
+.DiscussionPage .Button,
+.DepotPage .Button {
+  border-radius: 10px;
+}
+
+.IndexPage .Button--primary,
+.DiscussionPage .DiscussionPage-nav .Button--primary {
+  --button-bg: var(--kobalt-brand);
+  --button-bg-hover: color-mix(in srgb, var(--kobalt-brand) 88%, var(--kobalt-brand-mix, #000));
+  --button-bg-active: color-mix(in srgb, var(--kobalt-brand) 79%, var(--kobalt-brand-mix, #000));
+  --button-color: var(--kobalt-on-brand, #fff);
+  --button-color-hover: var(--kobalt-on-brand, #fff);
+}
+
+.WelcomeHero {
+  margin: 20px auto 0;
+  width: calc(100% - 30px);
+  max-width: 1360px;
+  border-radius: 24px;
+  background-image: var(--kobalt-stage-pattern), var(--kobalt-stage-gradient);
+  color: #f4f8ff;
+
+  .Hero-title,
+  .Hero-subtitle {
+    color: inherit;
+  }
+
+  .Hero-title {
+    font-weight: 760;
+    letter-spacing: -.025em;
+  }
+
+  .Hero-close {
+    color: #fff;
+  }
+}
+
+[data-kobalt-pattern='grid'] .WelcomeHero {
+  background-size: var(--kobalt-stage-grid-size);
+}
+
+.WelcomeHero > .container:has(> .KobaltFocus),
+.KobaltHero-inner:has(> .KobaltFocus) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 32%);
+  gap: 16px 24px;
+  align-items: center;
+  position: relative;
+}
+
+.WelcomeHero > .container:has(> .KobaltFocus) .Hero-close {
+  position: absolute;
+  inset: -17px -13px auto auto;
+}
+
+@media @phone {
+  .WelcomeHero > .container:has(> .KobaltFocus),
+  .KobaltHero-inner:has(> .KobaltFocus) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.DiscussionListItem.Stickiest-superSticky {
+  border-left: 4px solid #e74c3c !important;
+}
+
+.IndexPage:not(.DepotPage) {
+  > .Page-main > .Page-container,
+  > .Page-main > .container:has(> .FofWidgets-topWidgetSection) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: calc(var(--kobalt-frame) + var(--kobalt-gutter) + var(--kobalt-gutter));
+    padding-inline: var(--kobalt-gutter);
+  }
+
+  .Page-hero .WelcomeHero {
+    width: calc(100% - var(--kobalt-gutter) - var(--kobalt-gutter));
+    max-width: var(--kobalt-frame);
+    text-align: start;
+
+    &.Hero:not(.KobaltHero) {
+      padding: 24px clamp(18px, 4vw, 42px);
+    }
+
+    > .container {
+      width: 100%;
+      padding: 0;
+    }
+
+    .containerNarrow {
+      max-width: none;
+      margin: 0;
+    }
+  }
+}
+
+.WelcomeHero.KobaltHero {
+  padding: 0;
+}
+
+.KobaltHero-inner {
+  padding: 26px clamp(18px, 4vw, 42px);
+
+  .Hero-title {
+    margin: 0;
+    font-size: clamp(27px, 4vw, 42px);
+    line-height: 1.17;
+  }
+
+  .Hero-subtitle {
+    margin: 6px 0 0;
+    font-size: 14px;
+  }
+}
+
+.IndexPage:not(.DepotPage) {
+  .IndexPage-nav > ul {
+    padding: 0;
+  }
+
+  .IndexPage-toolbar {
+    min-width: 0;
+    padding: 8px 11px;
+    margin-bottom: 13px;
+    border: 1px solid var(--kobalt-line);
+    border-radius: 14px;
+    background: var(--kobalt-card);
+  }
+
+  .DiscussionList-discussions > li {
+    margin-bottom: var(--kobalt-card-gap, 14px);
+
+    > .DiscussionListItem {
+      padding: 0;
+      margin: 0;
+      border: 1px solid var(--kobalt-line);
+      border-radius: var(--kobalt-radius);
+      background: var(--kobalt-card);
+      box-shadow: var(--kobalt-shadow);
+
+      &:hover,
+      &:focus-within {
+        border-color: var(--kobalt-accent);
+      }
+    }
+  }
+
+  .DiscussionListItem > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 17px var(--kobalt-card-pad, 20px) 14px;
+    border-radius: inherit;
+    background: var(--kobalt-card);
+
+    &.unread {
+      --kobalt-card-rail: var(--kobalt-accent);
+    }
+
+    box-shadow: inset var(--kobalt-rail-offset, 4px) 0 var(--kobalt-tag-accent, var(--kobalt-card-rail, transparent));
+
+    > * {
+      min-width: 0;
+    }
+
+    > .DiscussionListItem-author {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      width: auto;
+      padding-inline-end: 28px;
+    }
+
+    .DiscussionListItem-author-avatar {
+      flex: 0 0 auto;
+    }
+  }
+
+  .DiscussionListItem.Stickiest-superSticky > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) {
+    box-shadow: none;
+  }
+
+  .DiscussionListItem-author-avatar .Avatar {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 13px;
+  }
+
+  .DiscussionListItem-main {
+    padding: 0;
+  }
+
+  .DiscussionListItem-title {
+    color: var(--kobalt-ink);
+    font-size: 19px;
+    line-height: 1.35;
+    font-weight: 720;
+    letter-spacing: -.018em;
+    overflow-wrap: anywhere;
+
+    .RubricLabel {
+      letter-spacing: 0;
+    }
+  }
+
+  .DiscussionListItem-info {
+    max-width: none;
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--kobalt-muted);
+
+    .item-excerpt {
+      display: block;
+      margin-inline-end: 0;
+      color: var(--kobalt-ink);
+      font-size: 14px;
+      line-height: 1.55;
+      max-block-size: 4.65em;
+      overflow: hidden;
+
+      &:focus-within {
+        max-block-size: none;
+      }
+
+      h1, h2, h3, h4, p {
+        margin: 0 0 3px;
+        font-size: inherit;
+      }
+    }
+
+    .item-tags {
+      position: static;
+      display: inline;
+      margin-inline-start: 0;
+    }
+  }
+
+  .DiscussionListItem-stats {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding-top: 9px;
+    border-top: 1px solid var(--kobalt-line);
+  }
+
+  .DiscussionListItem-stats-item {
+    min-height: 30px;
+    min-width: 38px;
+    justify-content: center;
+    padding: 3px 9px;
+    border-radius: 8px;
+    color: var(--kobalt-muted);
+    background: var(--kobalt-tint);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--kobalt-accent);
+    }
+  }
+
+  .DiscussionListItem-controls {
+    top: 12px;
+    inset-inline-end: 12px;
+  }
+}
+
+.KobaltByline {
+  flex: 1 1 10ch;
+  min-width: 0;
+  color: var(--kobalt-ink);
+  font-weight: 720;
+  overflow-wrap: anywhere;
+
+  a {
+    color: inherit;
+  }
+}
+
+.KobaltByline-time {
+  margin-top: 2px;
+  color: var(--kobalt-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.KobaltComposer {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 15px;
+  margin-bottom: 14px;
+  border: 1px solid var(--kobalt-line);
+  border-radius: var(--kobalt-radius);
+  background: var(--kobalt-card);
+  box-shadow: var(--kobalt-shadow);
+
+  .Avatar {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 12px;
+  }
+}
+
+.IndexPage .KobaltComposer-button {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  background: var(--kobalt-tint);
+  color: var(--kobalt-accent);
+  text-align: start;
+  white-space: normal;
+
+  > .Button-label {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .Button-labelText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .KobaltComposer-icon {
+    flex: 0 0 auto;
+    margin-inline-start: auto;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: 2px solid var(--kobalt-accent);
+    outline-offset: -2px;
+  }
+}
+
+.KobaltWidgets:empty {
+  display: none;
+}
+
+[dir='rtl'] { --kobalt-rail-offset: -4px; }
+
+[data-kobalt-glass='on'] {
+  .WelcomeHero {
+    background-image: var(--kobalt-glass-stage), var(--kobalt-stage-pattern), var(--kobalt-stage-gradient);
+    box-shadow: inset 0 0 0 1px rgba(236, 246, 255, .28);
+  }
+
+  .KobaltWidgets > .FofWidgets-sideNavAlt > *,
+  .IndexPage .FofWidgets-topWidgetSection > *,
+  .Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection > * {
+    background-image: var(--kobalt-glass-panel);
+  }
+}
+
+.KobaltWidgets > .FofWidgets-sideNavAlt > .FofWidgets-Widget .FofWidgets-Widget-content {
+  padding: 4px 0 0;
+  line-height: 1.4;
+  background: transparent;
+}
+
+.KobaltWidgets > .FofWidgets-sideNavAlt,
+.IndexPage .FofWidgets-topWidgetSection,
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection {
+  display: grid;
+  grid-template-columns: ~"repeat(auto-fit, minmax(min(100%, 180px), 1fr))";
+  gap: 12px;
+  width: auto;
+  padding: 0;
+  margin: 0 0 15px;
+  mask-image: none;
+  -webkit-mask-image: none;
+
+  > * {
+    min-width: 0;
+    margin: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--kobalt-line);
+    border-radius: 15px;
+    background: var(--kobalt-card);
+    box-shadow: var(--kobalt-shadow);
+    overflow-wrap: anywhere;
+  }
+
+  .FofWidgets-Widget-title {
+    color: var(--kobalt-accent);
+    font-weight: 700;
+  }
+
+  .FofWidgets-Widget-content {
+    background: var(--kobalt-tint);
+    border-radius: 10px;
+  }
+}
+
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection {
+  margin-top: 17px;
+  margin-bottom: 0;
+}
+
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection .ShoutboxWidget-messages,
+.KobaltWidgets .ShoutboxWidget-messages {
+  max-block-size: var(--kobalt-shoutbox-height, 82px);
+}
+
+.DiscussionPage {
+  --discussion-content-max-width: 150ch;
+}
+
+.DiscussionPage .DiscussionHero {
+  background-image: linear-gradient(110deg, rgba(47, 72, 107, .10), rgba(103, 141, 185, .13));
+
+  .DiscussionHero-title {
+    font-weight: 750;
+    letter-spacing: -.024em;
+    overflow-wrap: anywhere;
+  }
+}
+
+.DiscussionPage .PostStream .CommentPost {
+  margin-bottom: 11px;
+  border: 1px solid var(--kobalt-line);
+  border-radius: var(--kobalt-radius);
+  background: var(--kobalt-card);
+}
+
+.DiscussionPage .Post-body {
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+.KobaltTopicTools,
+.KobaltReading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.KobaltTopicTools:has(> *) {
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.KobaltReading label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.KobaltReading select { width: auto; }
+
+.KobaltOutline {
+  padding: 13px 16px;
+  margin-bottom: 12px;
+  border: 1px solid var(--kobalt-line);
+  border-radius: 12px;
+  background: var(--kobalt-card);
+
+  ol { padding-inline-start: 20px; margin: 6px 0; }
+  .Button { white-space: normal; text-align: start; }
+}
+
+.DiscussionPage[data-kobalt-reading='on'] {
+  .Page-sidebar, .Page-pane { display: none; }
+  .Page-content { flex: 1 1 100%; min-width: 0; }
+  .Page-container { display: block; }
+  .DiscussionPage-stream { width: 100%; }
+  .Post-body {
+    font-size: var(--kobalt-reading-size, 15px);
+    line-height: var(--kobalt-reading-spacing, 1.6);
+  }
+}
+
+.DepotPage {
+  .DepotHero {
+    border-bottom: 1px solid var(--kobalt-line);
+  }
+
+  .IndexPage-nav .item-newDiscussion .Button {
+    border-radius: 12px;
+  }
+}
+
+@media @phone {
+  .WelcomeHero {
+    margin-top: 10px;
+    border-radius: 16px;
+  }
+
+  .IndexPage:not(.DepotPage) {
+    .DiscussionList {
+      margin: 0;
+    }
+
+    .DiscussionListItem > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) {
+      padding: 13px 13px 11px;
+      gap: 8px;
+    }
+
+    .DiscussionListItem-author-avatar .Avatar {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+    }
+
+    .DiscussionListItem-title {
+      font-size: 17px;
+    }
+  }
+
+  .KobaltWidgets > .FofWidgets-sideNavAlt,
+  .IndexPage .FofWidgets-topWidgetSection,
+  .Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(175px, 68%);
+    overflow-x: auto;
+    scroll-snap-type: inline proximity;
+    padding-bottom: 5px;
+
+    > * {
+      scroll-snap-align: start;
+    }
+  }
+}
+
+@media @desktop-up {
+  .IndexPage:not(.DepotPage):not(.Page--vertical) {
+    --sidebar-width: 185px;
+    --gap: 25px;
+
+    > .Page-main > .Page-container {
+      > .Page-content {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+
+      > .Page-sidebar,
+      > .Page-content {
+        margin-top: 23px;
+      }
+    }
+
+    .IndexPage-nav .Dropdown-menu {
+      > li > .Button,
+      > li > a {
+        min-height: 36px;
+        padding: 8px 9px;
+        border-radius: 9px;
+        color: var(--kobalt-ink);
+      }
+
+      > li > .Button:hover,
+      > li > a:hover,
+      > li.active > .Button,
+      > li.active > a,
+      > li > .Button.active,
+      > li > a.active {
+        color: var(--kobalt-accent);
+        background: var(--kobalt-tint);
+      }
+    }
+
+    .Page-container:has(> .Page-content .KobaltComposer) > .Page-sidebar .IndexPage-nav .item-newDiscussion {
+      display: none;
+    }
+  }
+}

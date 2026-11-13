@@ -1,0 +1,10 @@
+{
+  "name": "@el-choco/kobalt",
+  "private": true,
+  "scripts": { "build": "webpack --mode production" },
+  "devDependencies": {
+    "flarum-webpack-config": "3.1.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

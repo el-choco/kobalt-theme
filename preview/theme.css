@@ -1,0 +1,1049 @@
+:root,
+.KobaltStudio-preview {
+  --kobalt-stage-color: #f4f8ff;
+  --kobalt-stage-grid-size: 29px 29px, 29px 29px, 100% 100%;
+  --kobalt-stage-gradient: linear-gradient(112deg, #172c49, var(--kobalt-stage-end, #4d698e));
+  --kobalt-stage-pattern: repeating-radial-gradient(ellipse at 86% -25%, transparent 0 34px, rgba(213, 231, 255, 0.14) 35px 36px, transparent 37px 53px), radial-gradient(ellipse at 92% 0%, rgba(191, 219, 255, 0.25), transparent 56%);
+}
+[data-kobalt-pattern='grid'] {
+  --kobalt-stage-pattern: linear-gradient(90deg, rgba(223, 237, 255, 0.12) 1px, transparent 1px), linear-gradient(rgba(223, 237, 255, 0.12) 1px, transparent 1px);
+}
+[data-kobalt-pattern='plain'] {
+  --kobalt-stage-pattern: linear-gradient(transparent, transparent);
+}
+.KobaltBackdrop {
+  color: var(--kobalt-stage-color);
+  background-image: var(--kobalt-stage-pattern), var(--kobalt-stage-gradient);
+}
+.KobaltFeatured {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  margin-block: 0 14px;
+  padding: 14px;
+  border: 1px solid var(--kobalt-line, var(--control-bg));
+  border-inline-start: 4px solid var(--kobalt-accent, #4d698e);
+  border-radius: var(--kobalt-radius);
+  background: linear-gradient(105deg, var(--kobalt-tint, var(--control-bg)), var(--kobalt-card, var(--body-bg)));
+  color: var(--kobalt-ink, var(--text-color));
+  overflow-wrap: anywhere;
+}
+.KobaltFeatured h2 {
+  margin: 3px 0;
+  font-size: 19px;
+}
+.KobaltFeatured p {
+  margin: 0 0 4px;
+}
+.KobaltFeatured-copy {
+  min-width: 0;
+}
+.KobaltFeatured-label {
+  color: var(--kobalt-accent, var(--link-color));
+  font-size: 12px;
+  font-weight: 750;
+}
+.KobaltFeatured-link {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.KobaltFeatured-icon,
+.KobaltFeatured-image {
+  display: grid;
+  flex: 0 0 auto;
+  width: clamp(44px, 12vw, 88px);
+  aspect-ratio: 1;
+  place-items: center;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.KobaltFeatured-icon {
+  background: var(--kobalt-brand);
+  color: var(--kobalt-on-brand, #fff);
+}
+.KobaltFeed-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  padding-top: 4px;
+}
+.KobaltFeed-actions > .Button {
+  color: var(--kobalt-muted, var(--muted-color));
+}
+.KobaltFeed-actions > .Button > .icon {
+  margin-inline-end: 5px;
+}
+.KobaltFeed-reactions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-inline-start: auto;
+  color: var(--kobalt-muted, var(--muted-color));
+  font-size: 12px;
+}
+.KobaltFeed-reactions .Reactions {
+  margin: 0;
+}
+.KobaltNotice {
+  padding: 13px 16px;
+  margin-bottom: 12px;
+  border: 1px solid var(--kobalt-line, var(--control-bg));
+  border-inline-start: 4px solid var(--kobalt-brand, #4d698e);
+  border-radius: 12px;
+  background: var(--kobalt-tint, var(--control-bg));
+  overflow-wrap: anywhere;
+  color: var(--kobalt-ink, var(--text-color));
+}
+.KobaltNotice p {
+  margin: 0 0 5px;
+  white-space: pre-line;
+}
+.KobaltNotice .KobaltSolution {
+  margin-inline-start: 10px;
+}
+.KobaltPins,
+.KobaltJourney {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+.KobaltPins li,
+.KobaltJourney li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.KobaltPins .Button,
+.KobaltJourney .Button {
+  margin-inline-start: auto;
+}
+.KobaltPins input,
+.KobaltJourney input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  vertical-align: middle;
+}
+.KobaltPins li:has(input:checked) > a,
+.KobaltJourney li:has(input:checked) > a {
+  text-decoration: line-through;
+  color: var(--kobalt-muted, var(--muted-color));
+}
+.KobaltInlineForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.KobaltInlineForm .FormControl {
+  flex: 1 1 180px;
+  width: auto;
+  min-width: 0;
+}
+.KobaltHome {
+  margin-block: 0 16px;
+  padding: 15px;
+  border: 1px solid var(--kobalt-line, var(--control-bg));
+  border-radius: var(--kobalt-radius);
+  background: var(--kobalt-card, var(--body-bg));
+  color: var(--kobalt-ink, var(--text-color));
+}
+.KobaltHome h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.KobaltHome > p {
+  margin: 0 0 10px;
+  color: var(--kobalt-muted, var(--muted-color));
+}
+.KobaltHome-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 185px), 1fr));
+  gap: 8px;
+}
+.KobaltHome-card {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--kobalt-line, var(--control-bg));
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+  background: var(--kobalt-tint, var(--control-bg));
+}
+.KobaltHome-card h3 {
+  margin: 0 0 5px;
+  font-size: 15px;
+}
+.KobaltHome-card p,
+.KobaltHome-card ul {
+  margin: 0;
+}
+.KobaltHome-card ul {
+  padding-inline-start: 18px;
+}
+.KobaltHome-links,
+.KobaltSupport,
+.KobaltStudio-projectPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+.KobaltHome-links {
+  margin-top: 6px;
+}
+.KobaltProjects-version {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--kobalt-accent, var(--link-color));
+}
+.KobaltSupport {
+  margin-block: 0 10px;
+}
+.KobaltSupport .Button[aria-pressed='true'],
+.KobaltStudio-projectPicker .Button[aria-pressed='true'] {
+  background: var(--kobalt-brand, #4d698e);
+  color: var(--kobalt-on-brand, #fff);
+}
+.KobaltSolution {
+  align-self: flex-start;
+  font-weight: 700;
+}
+[data-kobalt-glass='on'] {
+  --kobalt-stage-grid-size: 100% 100%, 29px 29px, 29px 29px, 100% 100%;
+  --kobalt-glass-stage: linear-gradient(145deg, rgba(220, 236, 255, 0.23), transparent 48%, rgba(207, 228, 255, 0.11));
+  --kobalt-glass-panel: linear-gradient(145deg, color-mix(in srgb, var(--kobalt-brand) 11%, transparent), transparent 65%);
+}
+[data-kobalt-glass='on'] .KobaltBackdrop {
+  background-image: var(--kobalt-glass-stage), var(--kobalt-stage-pattern), var(--kobalt-stage-gradient);
+  box-shadow: inset 0 0 0 1px rgba(236, 246, 255, 0.28);
+}
+[data-kobalt-glass='on'] .KobaltStudio-previewWidgets > span {
+  background-image: var(--kobalt-glass-panel);
+}
+[data-kobalt-pattern='grid'] .KobaltBackdrop {
+  background-size: var(--kobalt-stage-grid-size);
+}
+.KobaltDock {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  max-width: 100%;
+  padding: 4px;
+  border: 1px solid var(--kobalt-line, var(--control-bg));
+  border-radius: 14px;
+  background: var(--kobalt-card, var(--body-bg));
+  white-space: nowrap;
+}
+.KobaltDock-orbit {
+  display: grid;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--kobalt-brand, #4d698e);
+  color: var(--kobalt-on-brand, #fff);
+}
+.KobaltDock-link,
+.App-header .KobaltDock .KobaltDock-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 30px;
+  max-width: 17ch;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: var(--kobalt-ink, var(--text-color));
+  font-size: 12px;
+  font-weight: 670;
+  text-decoration: none;
+}
+.KobaltDock-link > i,
+.App-header .KobaltDock .KobaltDock-link > i {
+  flex: 0 0 auto;
+}
+.KobaltDock-link > span,
+.App-header .KobaltDock .KobaltDock-link > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.KobaltDock-link:hover,
+.App-header .KobaltDock .KobaltDock-link:hover,
+.KobaltDock-link:focus-visible,
+.App-header .KobaltDock .KobaltDock-link:focus-visible,
+.KobaltDock-link[aria-current='page'],
+.App-header .KobaltDock .KobaltDock-link[aria-current='page'] {
+  color: var(--kobalt-accent, var(--link-color));
+  background: var(--kobalt-tint, var(--control-bg));
+  text-decoration: none;
+}
+.KobaltFocus {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid rgba(230, 242, 255, 0.35);
+  border-radius: var(--kobalt-radius, 19px);
+  color: #f5f9ff;
+  background: linear-gradient(130deg, rgba(222, 237, 255, 0.19), rgba(13, 29, 49, 0.28));
+  box-shadow: 0 12px 22px rgba(10, 29, 51, 0.15);
+  text-align: start;
+}
+.KobaltFocus::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 45%;
+  z-index: -1;
+  background: repeating-radial-gradient(ellipse at 110% 10%, transparent 0 10px, rgba(215, 234, 255, 0.18) 11px 12px, transparent 13px 19px);
+  pointer-events: none;
+}
+.KobaltFocus-orbit {
+  display: grid;
+  place-items: center;
+  flex: 0 0 33px;
+  height: 33px;
+  border: 1px solid rgba(240, 248, 255, 0.36);
+  border-radius: 50%;
+  background: rgba(232, 244, 255, 0.16);
+}
+.KobaltFocus-copy {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.KobaltFocus-label {
+  margin-bottom: 3px;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.KobaltFocus-title {
+  display: block;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.KobaltFocus-text {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.KobaltFocus-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.KobaltFocus-action:hover,
+.KobaltFocus-action:focus-visible {
+  color: #fff;
+}
+.KobaltFooter {
+  margin-top: 30px;
+  border-top: 1px solid var(--kobalt-line, var(--control-bg));
+  background: linear-gradient(145deg, var(--kobalt-card, var(--body-bg)), var(--kobalt-tint, var(--control-bg)));
+  color: var(--kobalt-ink, var(--text-color));
+  overflow-wrap: anywhere;
+}
+.KobaltFooter .KobaltFooter-inner {
+  max-width: var(--kobalt-frame, 1210px);
+  padding: 32px 20px 18px;
+  margin: 0 auto;
+}
+.KobaltFooter .KobaltFooter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 155px), 1fr));
+  gap: 24px;
+}
+.KobaltFooter .KobaltFooter-info {
+  max-width: 340px;
+}
+.KobaltFooter h2 {
+  font-size: 21px;
+  margin: 0 0 10px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+.KobaltFooter h3 {
+  font-size: 14px;
+  margin: 0 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.KobaltFooter p {
+  white-space: pre-line;
+  line-height: 1.7;
+  font-size: 13px;
+  margin: 0 0 15px;
+}
+.KobaltFooter ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+.KobaltFooter a,
+.KobaltFooter .KobaltFooter-previewLink {
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+}
+.KobaltFooter a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.KobaltFooter a:focus-visible,
+.KobaltFooter button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.KobaltFooter .KobaltFooter-logo {
+  display: block;
+  max-width: 190px;
+  max-height: 65px;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+.KobaltFooter .KobaltFooter-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.KobaltFooter .KobaltFooter-social > * {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--kobalt-line, var(--control-bg));
+}
+.KobaltFooter .KobaltFooter-bottom {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid var(--kobalt-line, var(--control-bg));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+}
+.KobaltFooter .KobaltFooter-bottom .Button {
+  color: inherit;
+  font-size: 12px;
+  background: transparent;
+}
+.KobaltFooter .KobaltFooter-bottom .Button .fas {
+  margin-inline-start: 7px;
+}
+.KobaltFooter[data-style='brand'] {
+  background: linear-gradient(120deg, #192e4a, var(--kobalt-brand, #4d698e));
+  color: #f3f7ff;
+}
+.KobaltFooter[data-style='brand'] .KobaltFooter-bottom,
+.KobaltFooter[data-style='brand'] .KobaltFooter-social > * {
+  border-color: rgba(230, 240, 255, 0.25);
+}
+.KobaltFooter[data-style='brand'] .Button:hover {
+  background: rgba(230, 240, 255, 0.12);
+}
+@media (max-width: 767px) {
+  .KobaltFooter {
+    margin-top: 20px;
+  }
+  .KobaltFooter[data-mobile='off'] {
+    display: none;
+  }
+  .KobaltFooter .KobaltFooter-inner {
+    padding: 24px 15px calc(18px + env(safe-area-inset-bottom, 0px) + var(--kobalt-footer-gap, 0px));
+  }
+  .KobaltFooter .KobaltFooter-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 16px;
+  }
+  .KobaltFooter .KobaltFooter-info {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+:root {
+  --kobalt-brand: #4d698e;
+  --kobalt-accent: var(--kobalt-accent-light, #4d698e);
+  --kobalt-canvas: #f1f5fa;
+  --kobalt-card: #fff;
+  --kobalt-tint: #ecf2fa;
+  --kobalt-line: #dbe4ef;
+  --kobalt-ink: #1d3048;
+  --kobalt-muted: #52647c;
+  --kobalt-shadow: 0 2px 3px rgba(33, 56, 85, 0.035), 0 10px 26px rgba(33, 56, 85, 0.055);
+  --kobalt-radius: 19px;
+  --kobalt-frame: 1210px;
+  --kobalt-gutter: 15px;
+}
+[data-theme^='dark'] {
+  --kobalt-accent: color-mix(in srgb, var(--kobalt-brand) 48%, #e5efff);
+  --kobalt-canvas: #111a28;
+  --kobalt-card: #1a273a;
+  --kobalt-tint: #22324a;
+  --kobalt-line: #34455e;
+  --kobalt-ink: #edf3ff;
+  --kobalt-muted: #b6c6dd;
+  --kobalt-shadow: 0 6px 22px rgba(0, 0, 0, 0.17);
+}
+[data-theme='light-hc'],
+[data-theme='dark-hc'] {
+  --kobalt-line: var(--muted-color);
+  --kobalt-ink: var(--text-color);
+  --kobalt-muted: var(--text-color);
+  --kobalt-accent: var(--link-color);
+}
+body {
+  background: var(--kobalt-canvas);
+}
+.App-content {
+  border-top-color: var(--kobalt-line);
+  background: var(--kobalt-canvas);
+}
+.App-header {
+  box-shadow: 0 2px 12px rgba(31, 53, 80, 0.08);
+}
+.KobaltDock-mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .KobaltDock-mobile {
+    display: block;
+    margin-bottom: 11px;
+  }
+}
+@media (min-width: 768px) {
+  .Header-primary:has(.KobaltDock) > .Header-controls {
+    justify-content: center;
+  }
+}
+.App-header .Button,
+.IndexPage .Button,
+.DiscussionPage .Button,
+.DepotPage .Button {
+  border-radius: 10px;
+}
+.IndexPage .Button--primary,
+.DiscussionPage .DiscussionPage-nav .Button--primary {
+  --button-bg: var(--kobalt-brand);
+  --button-bg-hover: color-mix(in srgb, var(--kobalt-brand) 88%, var(--kobalt-brand-mix, #000));
+  --button-bg-active: color-mix(in srgb, var(--kobalt-brand) 79%, var(--kobalt-brand-mix, #000));
+  --button-color: var(--kobalt-on-brand, #fff);
+  --button-color-hover: var(--kobalt-on-brand, #fff);
+}
+.WelcomeHero {
+  margin: 20px auto 0;
+  width: calc(100% - 30px);
+  max-width: 1360px;
+  border-radius: 24px;
+  background-image: var(--kobalt-stage-pattern), var(--kobalt-stage-gradient);
+  color: #f4f8ff;
+}
+.WelcomeHero .Hero-title,
+.WelcomeHero .Hero-subtitle {
+  color: inherit;
+}
+.WelcomeHero .Hero-title {
+  font-weight: 760;
+  letter-spacing: -0.025em;
+}
+.WelcomeHero .Hero-close {
+  color: #fff;
+}
+[data-kobalt-pattern='grid'] .WelcomeHero {
+  background-size: var(--kobalt-stage-grid-size);
+}
+.WelcomeHero > .container:has(> .KobaltFocus),
+.KobaltHero-inner:has(> .KobaltFocus) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 32%);
+  gap: 16px 24px;
+  align-items: center;
+  position: relative;
+}
+.WelcomeHero > .container:has(> .KobaltFocus) .Hero-close {
+  position: absolute;
+  inset: -17px -13px auto auto;
+}
+@media (max-width: 767px) {
+  .WelcomeHero > .container:has(> .KobaltFocus),
+  .KobaltHero-inner:has(> .KobaltFocus) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.DiscussionListItem.Stickiest-superSticky {
+  border-left: 4px solid #e74c3c !important;
+}
+.IndexPage:not(.DepotPage) > .Page-main > .Page-container,
+.IndexPage:not(.DepotPage) > .Page-main > .container:has(> .FofWidgets-topWidgetSection) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(var(--kobalt-frame) + var(--kobalt-gutter) + var(--kobalt-gutter));
+  padding-inline: var(--kobalt-gutter);
+}
+.IndexPage:not(.DepotPage) .Page-hero .WelcomeHero {
+  width: calc(100% - var(--kobalt-gutter) - var(--kobalt-gutter));
+  max-width: var(--kobalt-frame);
+  text-align: start;
+}
+.IndexPage:not(.DepotPage) .Page-hero .WelcomeHero.Hero:not(.KobaltHero) {
+  padding: 24px clamp(18px, 4vw, 42px);
+}
+.IndexPage:not(.DepotPage) .Page-hero .WelcomeHero > .container {
+  width: 100%;
+  padding: 0;
+}
+.IndexPage:not(.DepotPage) .Page-hero .WelcomeHero .containerNarrow {
+  max-width: none;
+  margin: 0;
+}
+.WelcomeHero.KobaltHero {
+  padding: 0;
+}
+.KobaltHero-inner {
+  padding: 26px clamp(18px, 4vw, 42px);
+}
+.KobaltHero-inner .Hero-title {
+  margin: 0;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.17;
+}
+.KobaltHero-inner .Hero-subtitle {
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+.IndexPage:not(.DepotPage) .IndexPage-nav > ul {
+  padding: 0;
+}
+.IndexPage:not(.DepotPage) .IndexPage-toolbar {
+  min-width: 0;
+  padding: 8px 11px;
+  margin-bottom: 13px;
+  border: 1px solid var(--kobalt-line);
+  border-radius: 14px;
+  background: var(--kobalt-card);
+}
+.IndexPage:not(.DepotPage) .DiscussionList-discussions > li {
+  margin-bottom: var(--kobalt-card-gap, 14px);
+}
+.IndexPage:not(.DepotPage) .DiscussionList-discussions > li > .DiscussionListItem {
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--kobalt-line);
+  border-radius: var(--kobalt-radius);
+  background: var(--kobalt-card);
+  box-shadow: var(--kobalt-shadow);
+}
+.IndexPage:not(.DepotPage) .DiscussionList-discussions > li > .DiscussionListItem:hover,
+.IndexPage:not(.DepotPage) .DiscussionList-discussions > li > .DiscussionListItem:focus-within {
+  border-color: var(--kobalt-accent);
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 17px var(--kobalt-card-pad, 20px) 14px;
+  border-radius: inherit;
+  background: var(--kobalt-card);
+  box-shadow: inset var(--kobalt-rail-offset, 4px) 0 var(--kobalt-tag-accent, var(--kobalt-card-rail, transparent));
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline).unread {
+  --kobalt-card-rail: var(--kobalt-accent);
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) > * {
+  min-width: 0;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) > .DiscussionListItem-author {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  width: auto;
+  padding-inline-end: 28px;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) .DiscussionListItem-author-avatar {
+  flex: 0 0 auto;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem.Stickiest-superSticky > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) {
+  box-shadow: none;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-author-avatar .Avatar {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 13px;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-main {
+  padding: 0;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-title {
+  color: var(--kobalt-ink);
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 720;
+  letter-spacing: -0.018em;
+  overflow-wrap: anywhere;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-title .RubricLabel {
+  letter-spacing: 0;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-info {
+  max-width: none;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--kobalt-muted);
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-info .item-excerpt {
+  display: block;
+  margin-inline-end: 0;
+  color: var(--kobalt-ink);
+  font-size: 14px;
+  line-height: 1.55;
+  max-block-size: 4.65em;
+  overflow: hidden;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-info .item-excerpt:focus-within {
+  max-block-size: none;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-info .item-excerpt h1,
+.IndexPage:not(.DepotPage) .DiscussionListItem-info .item-excerpt h2,
+.IndexPage:not(.DepotPage) .DiscussionListItem-info .item-excerpt h3,
+.IndexPage:not(.DepotPage) .DiscussionListItem-info .item-excerpt h4,
+.IndexPage:not(.DepotPage) .DiscussionListItem-info .item-excerpt p {
+  margin: 0 0 3px;
+  font-size: inherit;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-info .item-tags {
+  position: static;
+  display: inline;
+  margin-inline-start: 0;
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-stats {
+  position: static;
+  width: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding-top: 9px;
+  border-top: 1px solid var(--kobalt-line);
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-stats-item {
+  min-height: 30px;
+  min-width: 38px;
+  justify-content: center;
+  padding: 3px 9px;
+  border-radius: 8px;
+  color: var(--kobalt-muted);
+  background: var(--kobalt-tint);
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-stats-item:hover,
+.IndexPage:not(.DepotPage) .DiscussionListItem-stats-item:focus-visible {
+  color: var(--kobalt-accent);
+}
+.IndexPage:not(.DepotPage) .DiscussionListItem-controls {
+  top: 12px;
+  inset-inline-end: 12px;
+}
+.KobaltByline {
+  flex: 1 1 10ch;
+  min-width: 0;
+  color: var(--kobalt-ink);
+  font-weight: 720;
+  overflow-wrap: anywhere;
+}
+.KobaltByline a {
+  color: inherit;
+}
+.KobaltByline-time {
+  margin-top: 2px;
+  color: var(--kobalt-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+.KobaltComposer {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 15px;
+  margin-bottom: 14px;
+  border: 1px solid var(--kobalt-line);
+  border-radius: var(--kobalt-radius);
+  background: var(--kobalt-card);
+  box-shadow: var(--kobalt-shadow);
+}
+.KobaltComposer .Avatar {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 12px;
+}
+.IndexPage .KobaltComposer-button {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  background: var(--kobalt-tint);
+  color: var(--kobalt-accent);
+  text-align: start;
+  white-space: normal;
+}
+.IndexPage .KobaltComposer-button > .Button-label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.IndexPage .KobaltComposer-button .Button-labelText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+.IndexPage .KobaltComposer-button .KobaltComposer-icon {
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+}
+.IndexPage .KobaltComposer-button:hover,
+.IndexPage .KobaltComposer-button:focus-visible {
+  outline: 2px solid var(--kobalt-accent);
+  outline-offset: -2px;
+}
+.KobaltWidgets:empty {
+  display: none;
+}
+[dir='rtl'] {
+  --kobalt-rail-offset: -4px;
+}
+[data-kobalt-glass='on'] .WelcomeHero {
+  background-image: var(--kobalt-glass-stage), var(--kobalt-stage-pattern), var(--kobalt-stage-gradient);
+  box-shadow: inset 0 0 0 1px rgba(236, 246, 255, 0.28);
+}
+[data-kobalt-glass='on'] .KobaltWidgets > .FofWidgets-sideNavAlt > *,
+[data-kobalt-glass='on'] .IndexPage .FofWidgets-topWidgetSection > *,
+[data-kobalt-glass='on'] .Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection > * {
+  background-image: var(--kobalt-glass-panel);
+}
+.KobaltWidgets > .FofWidgets-sideNavAlt > .FofWidgets-Widget .FofWidgets-Widget-content {
+  padding: 4px 0 0;
+  line-height: 1.4;
+  background: transparent;
+}
+.KobaltWidgets > .FofWidgets-sideNavAlt,
+.IndexPage .FofWidgets-topWidgetSection,
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 12px;
+  width: auto;
+  padding: 0;
+  margin: 0 0 15px;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+.KobaltWidgets > .FofWidgets-sideNavAlt > *,
+.IndexPage .FofWidgets-topWidgetSection > *,
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection > * {
+  min-width: 0;
+  margin: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--kobalt-line);
+  border-radius: 15px;
+  background: var(--kobalt-card);
+  box-shadow: var(--kobalt-shadow);
+  overflow-wrap: anywhere;
+}
+.KobaltWidgets > .FofWidgets-sideNavAlt .FofWidgets-Widget-title,
+.IndexPage .FofWidgets-topWidgetSection .FofWidgets-Widget-title,
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection .FofWidgets-Widget-title {
+  color: var(--kobalt-accent);
+  font-weight: 700;
+}
+.KobaltWidgets > .FofWidgets-sideNavAlt .FofWidgets-Widget-content,
+.IndexPage .FofWidgets-topWidgetSection .FofWidgets-Widget-content,
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection .FofWidgets-Widget-content {
+  background: var(--kobalt-tint);
+  border-radius: 10px;
+}
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection {
+  margin-top: 17px;
+  margin-bottom: 0;
+}
+.Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection .ShoutboxWidget-messages,
+.KobaltWidgets .ShoutboxWidget-messages {
+  max-block-size: var(--kobalt-shoutbox-height, 82px);
+}
+.DiscussionPage {
+  --discussion-content-max-width: 150ch;
+}
+.DiscussionPage .DiscussionHero {
+  background-image: linear-gradient(110deg, rgba(47, 72, 107, 0.1), rgba(103, 141, 185, 0.13));
+}
+.DiscussionPage .DiscussionHero .DiscussionHero-title {
+  font-weight: 750;
+  letter-spacing: -0.024em;
+  overflow-wrap: anywhere;
+}
+.DiscussionPage .PostStream .CommentPost {
+  margin-bottom: 11px;
+  border: 1px solid var(--kobalt-line);
+  border-radius: var(--kobalt-radius);
+  background: var(--kobalt-card);
+}
+.DiscussionPage .Post-body {
+  font-size: 15px;
+  line-height: 1.68;
+}
+.KobaltTopicTools,
+.KobaltReading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.KobaltTopicTools:has(> *) {
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.KobaltReading label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: normal;
+  margin: 0;
+}
+.KobaltReading select {
+  width: auto;
+}
+.KobaltOutline {
+  padding: 13px 16px;
+  margin-bottom: 12px;
+  border: 1px solid var(--kobalt-line);
+  border-radius: 12px;
+  background: var(--kobalt-card);
+}
+.KobaltOutline ol {
+  padding-inline-start: 20px;
+  margin: 6px 0;
+}
+.KobaltOutline .Button {
+  white-space: normal;
+  text-align: start;
+}
+.DiscussionPage[data-kobalt-reading='on'] .Page-sidebar,
+.DiscussionPage[data-kobalt-reading='on'] .Page-pane {
+  display: none;
+}
+.DiscussionPage[data-kobalt-reading='on'] .Page-content {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+.DiscussionPage[data-kobalt-reading='on'] .Page-container {
+  display: block;
+}
+.DiscussionPage[data-kobalt-reading='on'] .DiscussionPage-stream {
+  width: 100%;
+}
+.DiscussionPage[data-kobalt-reading='on'] .Post-body {
+  font-size: var(--kobalt-reading-size, 15px);
+  line-height: var(--kobalt-reading-spacing, 1.6);
+}
+.DepotPage .DepotHero {
+  border-bottom: 1px solid var(--kobalt-line);
+}
+.DepotPage .IndexPage-nav .item-newDiscussion .Button {
+  border-radius: 12px;
+}
+@media (max-width: 767px) {
+  .WelcomeHero {
+    margin-top: 10px;
+    border-radius: 16px;
+  }
+  .IndexPage:not(.DepotPage) .DiscussionList {
+    margin: 0;
+  }
+  .IndexPage:not(.DepotPage) .DiscussionListItem > .DiscussionListItem-content:has(> .DiscussionListItem-author > .KobaltByline) {
+    padding: 13px 13px 11px;
+    gap: 8px;
+  }
+  .IndexPage:not(.DepotPage) .DiscussionListItem-author-avatar .Avatar {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+  .IndexPage:not(.DepotPage) .DiscussionListItem-title {
+    font-size: 17px;
+  }
+  .KobaltWidgets > .FofWidgets-sideNavAlt,
+  .IndexPage .FofWidgets-topWidgetSection,
+  .Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(175px, 68%);
+    overflow-x: auto;
+    scroll-snap-type: inline proximity;
+    padding-bottom: 5px;
+  }
+  .KobaltWidgets > .FofWidgets-sideNavAlt > *,
+  .IndexPage .FofWidgets-topWidgetSection > *,
+  .Page-main:has(.IndexPage-nav) .FofWidgets-topWidgetSection > * {
+    scroll-snap-align: start;
+  }
+}
+@media (min-width: 992px) {
+  .IndexPage:not(.DepotPage):not(.Page--vertical) {
+    --sidebar-width: 185px;
+    --gap: 25px;
+  }
+  .IndexPage:not(.DepotPage):not(.Page--vertical) > .Page-main > .Page-container > .Page-content {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .IndexPage:not(.DepotPage):not(.Page--vertical) > .Page-main > .Page-container > .Page-sidebar,
+  .IndexPage:not(.DepotPage):not(.Page--vertical) > .Page-main > .Page-container > .Page-content {
+    margin-top: 23px;
+  }
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .IndexPage-nav .Dropdown-menu > li > .Button,
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .IndexPage-nav .Dropdown-menu > li > a {
+    min-height: 36px;
+    padding: 8px 9px;
+    border-radius: 9px;
+    color: var(--kobalt-ink);
+  }
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .IndexPage-nav .Dropdown-menu > li > .Button:hover,
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .IndexPage-nav .Dropdown-menu > li > a:hover,
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .IndexPage-nav .Dropdown-menu > li.active > .Button,
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .IndexPage-nav .Dropdown-menu > li.active > a,
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .IndexPage-nav .Dropdown-menu > li > .Button.active,
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .IndexPage-nav .Dropdown-menu > li > a.active {
+    color: var(--kobalt-accent);
+    background: var(--kobalt-tint);
+  }
+  .IndexPage:not(.DepotPage):not(.Page--vertical) .Page-container:has(> .Page-content .KobaltComposer) > .Page-sidebar .IndexPage-nav .item-newDiscussion {
+    display: none;
+  }
+}

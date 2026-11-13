@@ -1,0 +1,218 @@
+el-choco-kobalt:
+  forum:
+    dock: Kobalt Orbit – Schnellzugriffe
+    link1: Forum
+    link2: Downloads
+    link3: Tags
+    focus_label: Im Fokus
+    focus_title: Software aus der Community
+    focus_action: Downloads entdecken
+    featured: Empfohlen
+    featured_open: Ansehen
+    feed_actions: Diskussionsaktionen
+    reply: Antworten
+    react: Reagieren
+    reaction_total: "{count, plural, one {# Reaktion} other {# Reaktionen}}"
+    share: Teilen
+    share_copied: Link kopiert.
+    share_prompt: Diskussionslink kopieren
+    projects: Projekte
+    project_download: Download
+    project_docs: Anleitung
+    project_support: Support
+    visit_title: Seit deinem letzten Besuch
+    visit_since: "Vergleich seit deinem Besuch {time}"
+    visit_first: "Ab dem nächsten Besuch findest du hier eine Auswahl neuer Aktivitäten."
+    visit_storage: "Der Browser kann den letzten Besuch hier nicht speichern."
+    visit_discussions: Neue Diskussionen
+    visit_replies: Neue Antworten
+    visit_downloads: Aktualisierte Downloads
+    visit_loading: Wird geladen …
+    visit_error: Gerade nicht abrufbar.
+    visit_empty: Keine neuen Einträge in der aktuellen Auswahl.
+    following: Meine Themen
+    support_status: Supportstatus
+    support_all: Alle
+    support_open: Offen
+    support_solved: Gelöst
+    best_answer: Zur besten Antwort
+    "workspace": "Mein Arbeitsplatz"
+    "workspace_help": "Deine Schnellzugriffe und Einstiegsschritte werden pro Konto in diesem Browser gespeichert."
+    "workspace_empty": "Hier kannst du deine wichtigsten Themen, Kategorien und Anleitungen ablegen."
+    "workspace_name": "Bezeichnung"
+    "workspace_url": "Adresse"
+    "workspace_add": "Hinzufügen"
+    "workspace_pin": "Am Arbeitsplatz anheften"
+    "workspace_remove": "{title} entfernen"
+    "workspace_full": "Dein Arbeitsplatz enthält bereits acht Links."
+    "workspace_invalid": "Gib einen Namen und eine gültige Adresse ein. Bis zu acht Links sind möglich."
+    "personal_storage": "Dein Browser konnte diese Einstellung nicht speichern."
+    "journey": "Dein Einstieg"
+    "journey_done": "{title} als erledigt markieren"
+    "toolbox": "Werkzeugkasten"
+    "project_repo": "Quellcode"
+    "notice_open": "Mehr erfahren"
+    "reading": "Lesemodus"
+    "reading_exit": "Lesemodus beenden"
+    "reading_size": "Schriftgröße"
+    "reading_spacing": "Zeilenabstand"
+    "outline": "Kapitelübersicht"
+    "outline_first": "Ersten Beitrag mit seinen Überschriften öffnen"
+    "footer": "Fußbereich"
+    "footer_social": "Social-Links"
+    "footer_links": "Weitere Links"
+    "footer_top": "Nach oben"
+  admin:
+    title: Kobalt Studio
+    subtitle: Gestalte die Kopfzeile, die Bühne und den Feed. Die Vorschau reagiert auf deine Eingaben.
+    preview: Live-Vorschau
+    defaults: Standardwerte einsetzen
+    orbit: Orbit
+    stage: Bühne
+    featured: Empfehlung
+    projects: Projekte
+    community: Community
+    layout: Layout
+    orbit_help: "Bis zu drei Ziele. Beispiele für die Adresse sind @index, @depot.index, @tags, downloads oder eine HTTPS-Adresse. Leere Adressen blenden den jeweiligen Link aus."
+    stage_help: "Leere Überschriften verwenden die vorhandenen Forentexte. Die Fokus-Karte kann zu einem Thema, einer Seite oder einer externen Adresse führen."
+    featured_help: "Die Karte erscheint auf der Startseite vor dem Feed. Für eine Diskussion kannst du die ID, den Slug oder den Link aus diesem Forum eingeben. Ein leerer Titel verwendet dann den Diskussionstitel."
+    projects_help: "Bis zu drei Karten. Ein leerer Name blendet die Karte aus. Mit dem Depot-Slug aus der Download-Adresse lädt Kobalt die veröffentlichte Version automatisch. Ohne Depot-Slug gilt die eingetragene Version."
+    community_help: "Die Besuchsübersicht gilt für angemeldete Mitglieder. Support-Filter benötigen FoF Best Answer und eine als Frage und Antwort konfigurierte Kategorie. Meine Themen benötigt FoF Follow Tags."
+    project_slot: "Projekt {slot}"
+    invalid_discussion: "Gib eine Diskussions-ID oder einen passenden Link ein, zum Beispiel 28 oder 28-serverlotse."
+    featured_example: Titel der ausgewählten Diskussion
+    example_label: Beispieldiskussion
+    layout_help: "Die Widget-Platzierung bearbeitest du in FoF Widgets Core. Hier steuerst du ihre Darstellung im Theme."
+    forum_widget: Forum-Statistik
+    members_widget: Aktive Benutzer
+    online_widget: Gerade online
+    composer_example: Diskussion starten
+    shoutbox_example: Nachrichtenbereich der Shoutbox · Beispiel
+    discussion_example: Eine neue Idee für den Homeserver
+    discussion_text: So wirken Abstand, Rundung und Farben im Feed.
+    "experience": "Erlebnis"
+    "journey": "Einstieg"
+    "categories": "Kategorien"
+    "experience_help": "Schalte die neuen Funktionen einzeln ein. Arbeitsplatz und Einstiegsschritte werden pro Konto in diesem Browser gespeichert. Den Werkzeugkasten füllst du über Projekte. Hinweise und Darstellungsarten richtest du unter Kategorien ein."
+    "experience_preview": "Lesemodus und Werkzeugkasten werden im geöffneten Thema angezeigt."
+    "journey_help": "Bis zu fünf Schritte. Titel und Zieladresse ausfüllen. Leere Einträge werden ausgeblendet. Die Mitglieder können die Schritte selbst abhaken."
+    "categories_help": "Bis zu drei Regeln. Trage den Kategorie-Slug aus /t/slug ein. Die erste passende Regel gewinnt. Support nutzt FoF Best Answer, Anleitungen erhalten eine Übersicht der h2- und h3-Überschriften des geladenen ersten Beitrags, Software verwendet das zugeordnete Projekt. Hinweise erscheinen im Kategoriebereich und im Thema. Alle eingetragenen Texte sind öffentlich."
+    "step_slot": "Schritt {slot}"
+    "category_slot": "Regel {slot}"
+    "footer": "Footer"
+    "footer_help": "Infobereich, vier Linkspalten und vier Social-Links. Leere oder ungültige Links werden ausgeblendet. Für Symbole etwa fas fa-book oder fab fa-github verwenden. '{year}' und '{forum}' im Copyright werden automatisch ersetzt. Aktivierst du diesen Footer, deaktiviere einen anderen Footer wie Modern Footer separat. Der mobile Abstand ist manuell für eine feste untere Navigation einstellbar."
+    "footer_general": "Allgemein"
+    "footer_blocks": "Linkspalten"
+    "footer_social": "Social-Links"
+    "block_slot": "Spalte {slot}"
+    "social_slot": "Social-Link {slot}"
+    fields:
+      dock: Orbit-Schnellzugriffe anzeigen
+      link1_label: Link 1 – Text
+      link1_url: Link 1 – Ziel
+      link2_label: Link 2 – Text
+      link2_url: Link 2 – Ziel
+      link3_label: Link 3 – Text
+      link3_url: Link 3 – Ziel
+      hero: Banner auf der Startseite anzeigen
+      hero_title: Banner – Titel
+      hero_subtitle: Banner – Beschreibung
+      pattern: Hintergrund des Banners
+      focus: Fokus-Karte anzeigen
+      focus_label: Fokus – Rubrik
+      focus_title: Fokus – Titel
+      focus_text: Fokus – Beschreibung
+      focus_action: Fokus – Linktext
+      focus_url: Fokus – Linkziel
+      featured: Empfehlung auf der Startseite anzeigen
+      featured_source: Inhalt der Empfehlung
+      featured_discussion: Diskussions-ID oder Link
+      featured_title: Empfehlung – Titel
+      featured_text: Empfehlung – Kurztext
+      featured_image: Empfehlung – Bildadresse
+      featured_url: Empfehlung – Linkziel
+      projects: Projektkarten auf der Startseite anzeigen
+      project_title: Projektname
+      project_version: Version für die manuelle Anzeige
+      project_depot: Depot-Slug für automatische Versionsanzeige
+      project_download: Download-Link
+      project_docs: Link zur Anleitung
+      project_support: Link zum Support-Thema
+      visit_updates: Besuchsübersicht anzeigen
+      support_filters: Support-Filter und Link zur besten Antwort anzeigen
+      following_feed: Meine Themen im Forumsmenü anzeigen
+      glass: Glas-Look für Banner und Widgets
+      feed_actions: Aktionsleiste auf Feed-Karten
+      tag_accents: Kartenrand in Kategorienfarbe
+      accent: Akzentfarbe
+      width: Maximale Feedbreite
+      radius: Rundung der Karten
+      density: Abstand der Karten
+      composer: Diskussionsstart im Feed anzeigen
+      widgets: Rechte Widgets über den Feed legen
+      shoutbox: Höhe der Nachrichten im Shoutbox-Widget
+      "workspace": "Persönlichen Arbeitsplatz anzeigen"
+      "onboarding": "Einsteigerpfad anzeigen"
+      "reader": "Lesemodus im Thema anbieten"
+      "toolbox": "Werkzeugkasten im Thema anzeigen"
+      "category_notices": "Kategoriehinweise anzeigen"
+      "content_modes": "Darstellung nach Kategorie aktivieren"
+      "project_repo": "Projekt – Quellcode-Adresse"
+      "step_title": "Schritt – Titel"
+      "step_url": "Schritt – Zieladresse"
+      "category_tag": "Kategorie-Slug"
+      "category_mode": "Darstellung im Thema"
+      "category_project": "Zugeordnetes Projekt"
+      "category_notice": "Hinweistext"
+      "category_label": "Hinweis – Linktext"
+      "category_url": "Hinweis – Linkziel"
+      "footer": "Kobalt-Footer anzeigen"
+      "footer_mode": "Auf diesen Seiten anzeigen"
+      "footer_style": "Darstellung"
+      "footer_mobile": "Auf Mobilgeräten anzeigen"
+      "footer_gap": "Zusätzlicher Abstand unten auf Mobilgeräten"
+      "footer_info": "Infobereich und Social-Links anzeigen"
+      "footer_logo": "Vorhandenes Forumlogo anzeigen"
+      "footer_title": "Titel – leer verwendet den Forumnamen"
+      "footer_text": "Beschreibung"
+      "footer_copyright": "Copyright – Platzhalter: '{year}' und '{forum}'"
+      "footer_top": "Nach-oben-Button anzeigen"
+      "footer_block_enabled": "Diese Linkspalte anzeigen"
+      "footer_block_title": "Spaltentitel"
+      "footer_block_icon": "Spaltensymbol – Font Awesome"
+      "footer_link_label": "Linktext"
+      "footer_link_url": "Linkziel"
+      "footer_social_label": "Beschriftung"
+      "footer_social_icon": "Symbol – Font Awesome"
+      "footer_social_url": "Linkziel"
+    choices:
+      orbit: Umlaufbahnen
+      manual: Eigene Inhalte
+      discussion: Vorhandene Diskussion
+      grid: Raster
+      plain: Farbverlauf
+      balanced: Standard
+      wide: Weit
+      narrow: Schmal
+      soft: Weich
+      round: Rund
+      sharp: Dezent
+      comfortable: Luftig
+      compact: Kompakt
+      short: Kurz
+      tall: Groß
+      "standard": "Standard"
+      "support": "Support"
+      "guide": "Anleitung"
+      "software": "Software"
+      "1": "Projekt 1"
+      "2": "Projekt 2"
+      "3": "Projekt 3"
+      "all": "Alle Seiten"
+      "index": "Nur die Startseite"
+      "except_discussion": "Alle außer Diskussionen"
+      "brand": "Kobaltblau"
+      "0": "Kein Zusatzabstand"
+      "56": "56 Pixel"
+      "72": "72 Pixel"
+      "96": "96 Pixel"
