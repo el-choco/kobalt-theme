@@ -6,7 +6,7 @@ import { footerData, footerLinks, footerSlots, footerView } from './footerView';
 import { dockView, featuredView, focusView, icons, projectsView } from './studioView';
 
 const tr = (key) => app.translator.trans(id + '.admin.' + key);
-const forum = (key) => app.translator.trans(id + '.forum.' + key);
+const previewText = (key) => tr('preview_text.' + key);
 const fields = {
   orbit: [
     ['dock', 'bool'], ['link1_label'], ['link1_url'], ['link2_label'], ['link2_url'], ['link3_label'], ['link3_url'],
@@ -126,22 +126,22 @@ class KobaltStudio extends ExtensionPage {
   preview(config) {
     const links = icons.flatMap((icon, i) => {
       const key = 'link' + (i + 1);
-      return config[key + '_url']?.trim() ? [{ icon, label: config[key + '_label'] || forum(key) }] : [];
+      return config[key + '_url']?.trim() ? [{ icon, label: config[key + '_label'] || previewText(key) }] : [];
     });
-    const dock = enabled(config.dock) && links.length ? dockView(links, forum('dock'), (entry, children) => m('span.KobaltDock-link', children)) : null;
+    const dock = enabled(config.dock) && links.length ? dockView(links, previewText('dock'), (entry, children) => m('span.KobaltDock-link', children)) : null;
     const focus = enabled(config.focus) && (config.focus_url || config.focus_title) ? focusView({
-      label: config.focus_label || forum('focus_label'),
-      title: config.focus_title || forum('focus_title'),
+      label: config.focus_label || previewText('focus_label'),
+      title: config.focus_title || previewText('focus_title'),
       text: config.focus_text,
-    }, config.focus_url ? m('span.KobaltFocus-action', config.focus_action || forum('focus_action')) : null) : null;
+    }, config.focus_url ? m('span.KobaltFocus-action', config.focus_action || previewText('focus_action')) : null) : null;
     const topic = config.featured_source === 'discussion';
     const featured = enabled(config.featured) && (topic ? discussionId(config.featured_discussion) : config.featured_title.trim()) ?
       featuredView({
-        label: forum('featured'),
+        label: previewText('featured'),
         title: config.featured_title.trim() || tr('featured_example'),
         text: config.featured_text,
         image: resolveDestination(config.featured_image, app),
-      }, (topic || config.featured_url.trim()) && m('span.KobaltFeatured-link', forum('featured_open'))) : null;
+      }, (topic || config.featured_url.trim()) && m('span.KobaltFeatured-link', previewText('featured_open'))) : null;
 
     return m('.KobaltStudio-preview', {
       style: themeStyle(config),
@@ -161,24 +161,24 @@ class KobaltStudio extends ExtensionPage {
       m('.KobaltStudio-previewFeed', [
         enabled(config.widgets) ? m('.KobaltStudio-previewWidgets', ['forum_widget', 'members_widget', 'online_widget'].map((key) => m('span', tr(key)))) : null,
         featured,
-        enabled(config.projects) && projectsView(projectCards(config), forum, (project, field) => {
+        enabled(config.projects) && projectsView(projectCards(config), previewText, (project, field) => {
           const hasLink = project[field] || (field === 'download' && project.depot);
-          return hasLink && m('span', forum('project_' + field));
+          return hasLink && m('span', previewText('project_' + field));
         }),
-        enabled(config.workspace) && m('section.KobaltHome', [m('h3', forum('workspace')), m('p', forum('workspace_help'))]),
+        enabled(config.workspace) && m('section.KobaltHome', [m('h3', previewText('workspace')), m('p', previewText('workspace_help'))]),
         enabled(config.onboarding) && journeySteps(config).length > 0 && m('section.KobaltHome', [
-          m('h3', forum('journey')), m('ol', journeySteps(config).map((step) => m('li', step.title))),
+          m('h3', previewText('journey')), m('ol', journeySteps(config).map((step) => m('li', step.title))),
         ]),
         this.group === 'categories' && enabled(config.category_notices) && config['category' + this.category + '_notice'] &&
           m('aside.KobaltNotice', config['category' + this.category + '_notice']),
         this.group === 'experience' && m('p.helpText', tr('experience_preview')),
         enabled(config.visit_updates) && m('.KobaltHome.KobaltVisit', [
-          m('h3', forum('visit_title')),
-          m('.KobaltHome-links', ['discussions', 'replies', 'downloads'].map((key) => m('span', forum('visit_' + key)))),
+          m('h3', previewText('visit_title')),
+          m('.KobaltHome-links', ['discussions', 'replies', 'downloads'].map((key) => m('span', previewText('visit_' + key)))),
         ]),
-        this.group === 'community' && enabled(config.following_feed) && m('span', forum('following')),
+        this.group === 'community' && enabled(config.following_feed) && m('span', previewText('following')),
         this.group === 'community' && enabled(config.support_filters) && m('.KobaltSupport',
-          ['all', 'open', 'solved'].map((key) => m('span.Button', forum('support_' + key)))),
+          ['all', 'open', 'solved'].map((key) => m('span.Button', previewText('support_' + key)))),
         enabled(config.composer) ? m('.KobaltStudio-previewComposer', tr('composer_example')) : null,
         m('.KobaltStudio-previewCard', {
           style: enabled(config.tag_accents) ? { 'box-shadow': 'inset 4px 0 #4d698e' } : undefined,
@@ -186,11 +186,11 @@ class KobaltStudio extends ExtensionPage {
           m('small', tr('example_label')),
           m('strong', tr('discussion_example')),
           m('p', tr('discussion_text')),
-          enabled(config.feed_actions) ? m('.KobaltFeed-actions', ['reply', 'react', 'share'].map((key) => m('span', forum(key)))) : null,
+          enabled(config.feed_actions) ? m('.KobaltFeed-actions', ['reply', 'react', 'share'].map((key) => m('span', previewText(key)))) : null,
         ]),
         this.group === 'layout' ? m('.KobaltStudio-previewShoutbox', tr('shoutbox_example')) : null,
       ]),
-      enabled(config.footer) && footerView(config, footerData(config, app), forum,
+      enabled(config.footer) && footerView(config, footerData(config, app), previewText,
         (item, children) => m('span.KobaltFooter-previewLink', children),
         { forumTitle: app.data.settings.forum_title || 'Kobalt', preview: true }),
     ]);
@@ -215,7 +215,7 @@ class KobaltStudio extends ExtensionPage {
             this.group === 'footer' && this.footerPicker(),
             this.group === 'journey' && this.slotPicker(stepSlots, 'step'),
             this.group === 'categories' && this.slotPicker(projectSlots, 'category'),
-            ...this.controls(config),
+            m('.KobaltStudio-controls', this.controls(config)),
           ]),
           m('.KobaltStudio-save', [
             this.submitButton(),

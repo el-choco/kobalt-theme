@@ -4,10 +4,9 @@
 
 Use **Kobalt Studio** in the admin panel to configure navigation, the home page banner, featured content, project cards, and layout. Members can use personal shortcuts, a getting-started checklist, and a reading mode.
 
-**Package** `el-choco/kobalt` · **Version** `0.1.0-alpha.14` · **License** MIT
+**Package** `el-choco/kobalt` · **Version** `0.1.0-alpha.15` · **License** MIT
 
-> composer require el-choco/kobalt
-> php flarum cache:clear 
+> Kobalt is in alpha. Check that the requested version is listed on Packagist before running the Composer command. For a local package, follow [Install from a ZIP archive](#install-from-a-zip-archive).
 
 ![Kobalt desktop preview with sample data](preview/desktop.png)
 
@@ -90,7 +89,7 @@ Run the commands from the forum root as the user that manages the Flarum install
 
 ```bash
 cd /var/www/flarum
-runuser -u www-data -- composer require el-choco/kobalt:"0.1.0-alpha.14" --update-no-dev --minimal-changes --no-scripts --no-interaction
+runuser -u www-data -- composer require el-choco/kobalt:"0.1.0-alpha.15" --update-no-dev --minimal-changes --no-scripts --no-interaction
 ```
 
 After installation, go to **Extensions** in the admin panel, disable the previous theme, and enable **Kobalt**. Then rebuild the cache.
@@ -114,7 +113,7 @@ cd /mnt/wdblue/flarum2
 docker compose exec -T --user flarum \
   --env COMPOSER_HOME=/data/extensions/composer-home \
   --workdir /opt/flarum flarum \
-  composer require el-choco/kobalt:"0.1.0-alpha.14" \
+  composer require el-choco/kobalt:"0.1.0-alpha.15" \
   --update-no-dev --minimal-changes --no-scripts --no-interaction && \
 docker compose exec -T --user flarum flarum extension sync
 ```
@@ -137,19 +136,19 @@ The `extension sync` and `s6-svc` commands are specific to the CrazyMax image. F
 
 ## Install from a ZIP archive
 
-The file `kobalt-0.1.0-alpha.14.zip` includes the compiled JavaScript. You can install it on the forum server without Node.js.
+The file `kobalt-0.1.0-alpha.15.zip` includes the compiled JavaScript. You can install it on the forum server without Node.js.
 
 ### CrazyMax from a ZIP archive
 
-Copy the ZIP file to `/tmp/kobalt-0.1.0-alpha.14.zip` on the Docker host. This example uses the existing `/mnt/wdblue/flarum2/data:/data` mount.
+Copy the ZIP file to `/tmp/kobalt-0.1.0-alpha.15.zip` on the Docker host. This example uses the existing `/mnt/wdblue/flarum2/data:/data` mount.
 
 ```bash
 install -d -m 755 /mnt/wdblue/flarum2/data/theme-sources
-unzip /tmp/kobalt-0.1.0-alpha.14.zip -d /mnt/wdblue/flarum2/data/theme-sources
+unzip /tmp/kobalt-0.1.0-alpha.15.zip -d /mnt/wdblue/flarum2/data/theme-sources
 cd /mnt/wdblue/flarum2
 
 docker compose exec -T --user flarum flarum \
-  test -r /data/theme-sources/kobalt-0.1.0-alpha.14/composer.json
+  test -r /data/theme-sources/kobalt-0.1.0-alpha.15/composer.json
 ```
 
 Once the container can read the file, configure the local Composer repository and install the package.
@@ -159,11 +158,11 @@ docker compose exec -T --user flarum \
   --env COMPOSER_HOME=/data/extensions/composer-home \
   --workdir /opt/flarum flarum \
   composer config --global repositories.kobalt \
-  '{"type":"path","url":"/data/theme-sources/kobalt-0.1.0-alpha.14","options":{"symlink":false,"versions":{"el-choco/kobalt":"0.1.0-alpha.14"}}}' && \
+  '{"type":"path","url":"/data/theme-sources/kobalt-0.1.0-alpha.15","options":{"symlink":false,"versions":{"el-choco/kobalt":"0.1.0-alpha.15"}}}' && \
 docker compose exec -T --user flarum \
   --env COMPOSER_HOME=/data/extensions/composer-home \
   --workdir /opt/flarum flarum \
-  composer require el-choco/kobalt:"0.1.0-alpha.14" \
+  composer require el-choco/kobalt:"0.1.0-alpha.15" \
   --update-no-dev --minimal-changes --no-scripts --no-interaction && \
 docker compose exec -T --user flarum flarum extension sync
 ```
@@ -176,12 +175,12 @@ Extract the ZIP outside the public web directory. This example uses `/var/www/fl
 
 ```bash
 install -d -m 755 /var/www/flarum-theme-sources
-unzip /tmp/kobalt-0.1.0-alpha.14.zip -d /var/www/flarum-theme-sources
+unzip /tmp/kobalt-0.1.0-alpha.15.zip -d /var/www/flarum-theme-sources
 cd /var/www/flarum
 
 runuser -u www-data -- composer config repositories.kobalt \
-  '{"type":"path","url":"/var/www/flarum-theme-sources/kobalt-0.1.0-alpha.14","options":{"symlink":false,"versions":{"el-choco/kobalt":"0.1.0-alpha.14"}}}' && \
-runuser -u www-data -- composer require el-choco/kobalt:"0.1.0-alpha.14" \
+  '{"type":"path","url":"/var/www/flarum-theme-sources/kobalt-0.1.0-alpha.15","options":{"symlink":false,"versions":{"el-choco/kobalt":"0.1.0-alpha.15"}}}' && \
+runuser -u www-data -- composer require el-choco/kobalt:"0.1.0-alpha.15" \
   --update-no-dev --minimal-changes --no-scripts --no-interaction
 ```
 
@@ -358,7 +357,7 @@ A normal package update preserves Studio settings. New features may be off by de
 
 ### Update a local ZIP installation
 
-Extract the new ZIP into a separate version directory and point the local Composer repository at that directory and version. Then run Composer. The [ZIP instructions](#install-from-a-zip-archive) use Alpha 14 as the example.
+Extract the new ZIP into a separate version directory and point the local Composer repository at that directory and version. Then run Composer. The [ZIP instructions](#install-from-a-zip-archive) use Alpha 15 as the example.
 
 Remove an older source directory only after Composer, installed symlinks, and other services have stopped referencing it.
 
@@ -463,7 +462,6 @@ Kobalt is available under the [MIT License](LICENSE).
 **Developed by el-choco.**
 
 
-
 ---
 
 # Kobalt
@@ -474,9 +472,9 @@ Kobalt is available under the [MIT License](LICENSE).
 
 Im **Kobalt Studio** gestaltest du Navigation, Banner, Empfehlungen, Projektkarten und Layout direkt im Adminbereich. Persönliche Schnellzugriffe, ein Einstiegspfad und ein Lesemodus ergänzen das Forum für seine Besucher.
 
-**Paket:** `el-choco/kobalt` · **Stand:** `0.1.0-alpha.14` · **Lizenz:** MIT
+**Paket:** `el-choco/kobalt` · **Stand:** `0.1.0-alpha.15` · **Lizenz:** MIT
 
-> Kobalt befindet sich in der Alpha-Phase. Die Composer-Befehle für Packagist gelten erst, sobald das Paket und die angegebene Version dort veröffentlicht sind. Bis dahin verwende die [Installation aus dem ZIP](#installation-aus-dem-zip).
+> Kobalt befindet sich in der Alpha-Phase. Prüfe vor der Installation mit Composer, ob die gewünschte Version auf Packagist gelistet ist. Für eine lokale Paketquelle verwende die [Installation aus dem ZIP](#installation-aus-dem-zip).
 
 ![Kobalt – Desktop-Vorschau mit Beispieldaten](preview/desktop.png)
 
@@ -551,8 +549,7 @@ Die Versionsanforderungen geben den zulässigen Bereich an, keine vollständige 
 
 ## Installation mit Composer
 
-> composer require el-choco/kobalt
-> php flarum cache:clear
+> Falls du bisher eine lokale Kobalt-Paketquelle verwendest, beachte vor dem Wechsel zu Packagist den Abschnitt [Aktualisieren](#aktualisieren).
 
 ### Normale Flarum-2-Installation
 
@@ -560,7 +557,7 @@ Die Befehle im Hauptverzeichnis deines Forums als dessen Installationsbenutzer a
 
 ```bash
 cd /var/www/flarum
-runuser -u www-data -- composer require el-choco/kobalt:"0.1.0-alpha.14" --update-no-dev --minimal-changes --no-scripts --no-interaction
+runuser -u www-data -- composer require el-choco/kobalt:"0.1.0-alpha.15" --update-no-dev --minimal-changes --no-scripts --no-interaction
 ```
 
 Nach erfolgreicher Installation:
@@ -588,7 +585,7 @@ cd /mnt/wdblue/flarum2
 docker compose exec -T --user flarum \
   --env COMPOSER_HOME=/data/extensions/composer-home \
   --workdir /opt/flarum flarum \
-  composer require el-choco/kobalt:"0.1.0-alpha.14" \
+  composer require el-choco/kobalt:"0.1.0-alpha.15" \
   --update-no-dev --minimal-changes --no-scripts --no-interaction && \
 docker compose exec -T --user flarum flarum extension sync
 ```
@@ -611,19 +608,19 @@ Die CrazyMax-Befehle `extension sync` und `s6-svc` gelten für dieses Image. Bei
 
 ## Installation aus dem ZIP
 
-Die Datei `kobalt-0.1.0-alpha.14.zip` enthält den fertigen Browser-Build. Node.js wird auf dem Forumserver nicht benötigt.
+Die Datei `kobalt-0.1.0-alpha.15.zip` enthält den fertigen Browser-Build. Node.js wird auf dem Forumserver nicht benötigt.
 
 ### CrazyMax / Docker Compose
 
-Die ZIP zunächst nach `/tmp/kobalt-0.1.0-alpha.14.zip` auf den Docker-Host übertragen. Das Beispiel setzt den bestehenden Mount `/mnt/wdblue/flarum2/data:/data` voraus.
+Die ZIP zunächst nach `/tmp/kobalt-0.1.0-alpha.15.zip` auf den Docker-Host übertragen. Das Beispiel setzt den bestehenden Mount `/mnt/wdblue/flarum2/data:/data` voraus.
 
 ```bash
 install -d -m 755 /mnt/wdblue/flarum2/data/theme-sources
-unzip /tmp/kobalt-0.1.0-alpha.14.zip -d /mnt/wdblue/flarum2/data/theme-sources
+unzip /tmp/kobalt-0.1.0-alpha.15.zip -d /mnt/wdblue/flarum2/data/theme-sources
 cd /mnt/wdblue/flarum2
 
 docker compose exec -T --user flarum flarum \
-  test -r /data/theme-sources/kobalt-0.1.0-alpha.14/composer.json
+  test -r /data/theme-sources/kobalt-0.1.0-alpha.15/composer.json
 ```
 
 Nur wenn die Datei im Container lesbar ist, die lokale Composer-Quelle eintragen und installieren:
@@ -633,11 +630,11 @@ docker compose exec -T --user flarum \
   --env COMPOSER_HOME=/data/extensions/composer-home \
   --workdir /opt/flarum flarum \
   composer config --global repositories.kobalt \
-  '{"type":"path","url":"/data/theme-sources/kobalt-0.1.0-alpha.14","options":{"symlink":false,"versions":{"el-choco/kobalt":"0.1.0-alpha.14"}}}' && \
+  '{"type":"path","url":"/data/theme-sources/kobalt-0.1.0-alpha.15","options":{"symlink":false,"versions":{"el-choco/kobalt":"0.1.0-alpha.15"}}}' && \
 docker compose exec -T --user flarum \
   --env COMPOSER_HOME=/data/extensions/composer-home \
   --workdir /opt/flarum flarum \
-  composer require el-choco/kobalt:"0.1.0-alpha.14" \
+  composer require el-choco/kobalt:"0.1.0-alpha.15" \
   --update-no-dev --minimal-changes --no-scripts --no-interaction && \
 docker compose exec -T --user flarum flarum extension sync
 ```
@@ -650,12 +647,12 @@ Die ZIP außerhalb des öffentlichen Web-Verzeichnisses entpacken. Beispiel für
 
 ```bash
 install -d -m 755 /var/www/flarum-theme-sources
-unzip /tmp/kobalt-0.1.0-alpha.14.zip -d /var/www/flarum-theme-sources
+unzip /tmp/kobalt-0.1.0-alpha.15.zip -d /var/www/flarum-theme-sources
 cd /var/www/flarum
 
 runuser -u www-data -- composer config repositories.kobalt \
-  '{"type":"path","url":"/var/www/flarum-theme-sources/kobalt-0.1.0-alpha.14","options":{"symlink":false,"versions":{"el-choco/kobalt":"0.1.0-alpha.14"}}}' && \
-runuser -u www-data -- composer require el-choco/kobalt:"0.1.0-alpha.14" \
+  '{"type":"path","url":"/var/www/flarum-theme-sources/kobalt-0.1.0-alpha.15","options":{"symlink":false,"versions":{"el-choco/kobalt":"0.1.0-alpha.15"}}}' && \
+runuser -u www-data -- composer require el-choco/kobalt:"0.1.0-alpha.15" \
   --update-no-dev --minimal-changes --no-scripts --no-interaction
 ```
 
@@ -838,7 +835,7 @@ Die Studio-Einstellungen bleiben beim normalen Paketupdate erhalten. Neue Funkti
 
 ### Von einer älteren lokalen ZIP-Version
 
-Die neue ZIP in einen eigenen Versionsordner entpacken und die lokale Paketquelle auf diesen Ordner und die neue Versionsnummer umstellen. Danach Composer ausführen. Die ZIP-Anleitung zeigt das Vorgehen für Alpha 14.
+Die neue ZIP in einen eigenen Versionsordner entpacken und die lokale Paketquelle auf diesen Ordner und die neue Versionsnummer umstellen. Danach Composer ausführen. Die ZIP-Anleitung zeigt das Vorgehen für Alpha 15.
 
 Den alten Quellordner erst entfernen, wenn weder die Composer-Konfiguration noch ein installierter Symlink oder anderer Dienst darauf verweist.
 
